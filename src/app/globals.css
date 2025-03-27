@@ -1,8 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0c0f1a; /* 222.2 84% 4.9% */
+  --foreground: #e8f0ff; /* 210 40% 98% */
+  --muted: #2b2d33; /* 217.2 32.6% 17.5% */
+  --muted-foreground: #9ba3b8; /* 215 20.2% 65.1% */
+  --popover: #0c0f1a; /* 222.2 84% 4.9% */
+  --popover-foreground: #e8f0ff; /* 210 40% 98% */
+  --card: #0c0f1a; /* 222.2 84% 4.9% */
+  --card-foreground: #e8f0ff; /* 210 40% 98% */
+  --border: #2b2d33; /* 217.2 32.6% 17.5% */
+  --input: #2b2d33; /* 217.2 32.6% 17.5% */
+  --primary: #3f97f7; /* 217.2 91.2% 59.8% */
+  --primary-foreground: #1d202b; /* 222.2 47.4% 11.2% */
+  --secondary: #2b2d33; /* 217.2 32.6% 17.5% */
+  --secondary-foreground: #e8f0ff; /* 210 40% 98% */
+  --accent: #2b2d33; /* 217.2 32.6% 17.5% */
+  --accent-foreground: #e8f0ff; /* 210 40% 98% */
+  --destructive: #b12f2b; /* 0 62.8% 30.6% */
+  --destructive-foreground: #e8f0ff; /* 210 40% 98% */
+  --ring: #4496e6; /* 224.3 76.3% 48% */
+  --chart-1: #348bff; /* 220 70% 50% */
+  --chart-2: #39b27e; /* 160 60% 45% */
+  --chart-3: #ffbe26; /* 30 80% 55% */
+  --chart-4: #ba50ff; /* 280 65% 60% */
+  --chart-5: #ff5786; /* 340 75% 55% */
 }
 
 @theme inline {
@@ -10,13 +32,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
