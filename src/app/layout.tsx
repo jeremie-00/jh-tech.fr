@@ -83,7 +83,7 @@ export default function RootLayout({
         />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#060606" />
       </head>
       <body className={`${DMSans.variable} antialiased`}>
         {children}
