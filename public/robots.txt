@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /pages/legal
+Disallow: /CV-Jérémie-Hérault.pdf
 
 Sitemap: https://jh-tech.fr/api/sitemap.xml
