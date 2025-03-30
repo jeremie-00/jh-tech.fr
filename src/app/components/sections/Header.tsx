@@ -1,4 +1,5 @@
 "use client";
+import { useIsMobile } from "@/app/hook/useMobile";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import datas from "../../datas.json";
@@ -13,7 +14,7 @@ interface NavBarreProps {
 function NavBarre({ links, hash, setHash }: NavBarreProps) {
   return (
     <nav>
-      <ul className="flex items-center justify-center gap-1 px-12 py-2 max-lg:hidden">
+      <ul className="flex items-center justify-center gap-1 px-8 py-2">
         {links.map((link) => (
           <li key={link.title} className="relative">
             <CustomBtn
@@ -59,7 +60,7 @@ function NavMobile({ links, hash, setHash }: NavBarreProps) {
   }, []);
 
   return (
-    <div className="flex items-center gap-1 lg:hidden">
+    <div className="flex items-center gap-1">
       <CustomBtn
         //href={link.href}
         theme="outline"
@@ -127,6 +128,7 @@ function NavMobile({ links, hash, setHash }: NavBarreProps) {
 }
 
 export default function Header() {
+  const isMobile = useIsMobile();
   const [hash, setHash] = useState("");
 
   useEffect(() => {
@@ -161,8 +163,11 @@ export default function Header() {
           {datas.home.title}
         </span>
       </CustomBtn>
-      <NavBarre links={datas.links} hash={hash} setHash={setHash} />
-      <NavMobile links={datas.links} hash={hash} setHash={setHash} />
+      {isMobile ? (
+        <NavMobile links={datas.links} hash={hash} setHash={setHash} />
+      ) : (
+        <NavBarre links={datas.links} hash={hash} setHash={setHash} />
+      )}
     </header>
   );
 }
