@@ -59,7 +59,7 @@ function NavMobile({ links, hash, setHash }: NavBarreProps) {
   }, []);
 
   return (
-    <div className="flex items-center gap-1 min-lg:hidden">
+    <div className="flex items-center gap-1 lg:hidden">
       <CustomBtn
         //href={link.href}
         theme="outline"
