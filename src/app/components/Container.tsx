@@ -48,7 +48,7 @@ export function ContentGrid({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-start max-lg:gap-8 gap-6 p-2">
+    <div className="flex flex-col items-start max-lg:gap-10 gap-16 p-2">
       <div className="w-full h-full flex flex-col text-center gap-8">
         <h2 className="min-md:text-5xl text-4xl tracking-wider max-lg:text-left">
           {title}
