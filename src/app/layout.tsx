@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import { ToastNotification } from "./components/ui/toast";
@@ -11,9 +12,11 @@ const DMSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  viewport: "width=device-width, initial-scale=1",
   title: "Portfolio de Jérémie Hérault | Développeur Web",
   description:
     "Explorez le portfolio de Jérémie Hérault, développeur web spécialisé en React, Next.js et TailwindCSS. Découvrez des projets modernes, interactifs et performants.",
+  themeColor: "#0A0A0A",
   keywords: [
     "jh-tech",
     "portfolio",
@@ -57,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio de Jérémie Hérault",
     images: [
       {
-        url: "https:/jh-tech.fr/profilepicPc.jpg",
+        url: "https://jh-tech.fr/profilepicPc.jpg",
         width: 1200,
         height: 630,
         alt: "Aperçu du portfolio de Jérémie Hérault",
@@ -75,10 +78,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${DMSans.variable} antialiased bg-background`}>
+      <body className={`${DMSans.variable} antialiased`}>
         {children}
-
         <ToastNotification />
+        <SpeedInsights />
       </body>
     </html>
   );
