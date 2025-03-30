@@ -36,7 +36,7 @@ export default function Skills() {
       </ContentGrid>
 
       <Content title={datas.stacks.title} text={datas.stacks.text}>
-        <div className="min-lg:w-[46%] w-full h-full flex flex-wrap items-center max-lg:justify-center gap-4 max-lg:order-2">
+        <div className="w-full h-full flex flex-1 flex-wrap items-center max-lg:justify-center gap-4 max-lg:order-2">
           {datas.stacks.cards.map((skill, idx) => (
             <span key={idx} className={`relative z-20 group`}>
               <CustomCard className="relative z-20" theme="icon">

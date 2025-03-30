@@ -20,7 +20,7 @@ export default function About() {
   return (
     <ContainerSection id="about">
       <Content title={datas.about.title} text={datas.about.text}>
-        <div className="min-lg:w-[46%] w-full h-1/2 flex flex-col items-center justify-center">
+        <div className="w-full h-1/2 flex flex-1 flex-col items-center justify-center">
           <div className="relative">
             <Image
               src={"/images/profilepicApropos.png"}
@@ -35,7 +35,7 @@ export default function About() {
         </div>
       </Content>
       <Content title={datas.educations.title} text={educationsText}>
-        <div className="min-lg:w-1/2 w-full h-full flex flex-col items-center justify-center order-2">
+        <div className="w-full h-full flex flex-1 flex-col items-center justify-center order-2">
           <CustomCard className="flex-col h-auto w-full" theme="default">
             {datas.educations.text.map((educ, idx) => (
               <CustomCard
