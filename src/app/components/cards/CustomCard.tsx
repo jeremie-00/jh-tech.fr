@@ -33,13 +33,13 @@ const ICON_MAP = {
 };
 
 const THEME_STYLES = {
-  default: "bg-card border border-border rounded-md",
-  primary: "bg-primary border border-border",
-  secondary: "bg-secondary border border-border",
-  outline: "bg-background border border-border",
-  accent: "bg-accent border border-border",
+  default: "bg-card border-1 border-border rounded-md",
+  primary: "bg-primary border-1 border-border",
+  secondary: "bg-secondary border-1 border-border",
+  outline: "bg-background border-1 border-border",
+  accent: "bg-accent border-1 border-border",
   none: "border-none shadow-none",
-  icon: "bg-card border border-border w-fit p-2 rounded-2xl",
+  icon: "bg-card border-1 border-border w-fit p-2 rounded-2xl",
 };
 
 const SIZE_CLASSES = {
