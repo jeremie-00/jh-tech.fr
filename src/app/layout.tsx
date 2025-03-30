@@ -75,7 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${DMSans.variable} antialiased`}>
+      <body className={`${DMSans.variable} antialiased bg-background`}>
         {children}
 
         <ToastNotification />
