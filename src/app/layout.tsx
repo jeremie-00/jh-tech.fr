@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio de Jérémie Hérault",
     images: [
       {
-        url: "https://jh-tech.fr/profilepicPc.jpg",
+        url: "https://jh-tech.fr/icon-jh/favicon-512x512.jpg",
         width: 1200,
         height: 630,
         alt: "Aperçu du portfolio de Jérémie Hérault",
