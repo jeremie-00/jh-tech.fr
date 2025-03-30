@@ -73,7 +73,7 @@ const LegalSection: React.FC<LegalSectionProps> = ({
 }) => {
   return (
     <article>
-      <h2 className="h2-legal">{title}</h2>
+      <h2 className="text-2xl font-bold">{title}</h2>
       {details ? (
         details.map((item, index) => (
           <p key={index}>
