@@ -3,7 +3,7 @@ import { CustomBtn, IconName } from "../buttons/custom-buttons";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full h-full flex items-center justify-between p-12 z-40 bg-background border-t border-primary mt-24 text-foreground/60">
+    <footer className="relative w-full h-full flex items-center justify-between md:p-12 p-4 z-40 bg-background border-t border-primary mt-24 text-foreground/60">
       <div className="flex flex-col items-left text-[0.75rem] gap-1">
         <CustomBtn
           href="#home"
@@ -27,7 +27,7 @@ export default function Footer() {
         </CustomBtn>
       </div>
 
-      <div className="flex items-center place-self-start gap-4">
+      <div className="flex items-center place-self-start gap-4 max-md:flex-col">
         {datas.home.buttons.map((button, idx) => {
           if (button.title !== "Contact") {
             return (
