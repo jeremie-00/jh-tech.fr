@@ -3,6 +3,7 @@ import datas from "../../datas.json";
 import { CustomBtn, IconName } from "../buttons/custom-buttons";
 import { CustomCard } from "../cards/CustomCard";
 import { ContainerSection, ContentGrid } from "../Container";
+import Separator from "../ui/Separator";
 
 export default function Works() {
   return (
@@ -24,7 +25,7 @@ export default function Works() {
                 quality={90}
               />
               <h3 className="text-2xl font-bold">{work.name}</h3>
-              <span className="w-12 h-1 bg-primary rounded-full" />
+              <Separator />
               <h4 className="text-[1rem] flex flex-1">{work.text}</h4>
               <div className="w-full flex flex-wrap content-start gap-2">
                 {work.skills?.map((skill, i) => (

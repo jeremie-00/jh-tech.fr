@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FormulaireContact } from "../FormulaireContact";
+import Separator from "../ui/Separator";
 
 export default function Contact() {
   return (
@@ -13,8 +14,7 @@ export default function Contact() {
             <h2 className="min-md:text-5xl text-4xl tracking-wider text-left">
               Contactez moi
             </h2>
-            <span className="w-12 h-1 bg-primary rounded-full" />
-
+            <Separator />
             <p className="min-md:text-xl text-lg text-left lg:pr-8">
               Une idée, un projet, une question ? Curieux et toujours en quête
               de nouveaux défis, je serais ravi d’échanger avec vous. Parlons-en
