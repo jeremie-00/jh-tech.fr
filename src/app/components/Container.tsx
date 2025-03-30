@@ -51,12 +51,12 @@ export function ContentGrid({
 }) {
   return (
     <div className="flex flex-col items-start max-lg:gap-10 gap-16 p-2">
-      <div className="w-full h-full flex flex-col text-center lg:items-center gap-8">
-        <h2 className="min-md:text-5xl text-4xl tracking-wider max-lg:text-left">
+      <div className="w-full h-full flex flex-col text-center md:items-center gap-8">
+        <h2 className="min-md:text-5xl text-4xl tracking-wider max-md:text-left">
           {title}
         </h2>
         <Separator />
-        <p className="min-md:text-xl text-lg md:w-2/3 max-lg:text-left lg:place-self-center">
+        <p className="min-md:text-xl text-lg md:w-2/3 max-md:text-left md:place-self-center">
           {text}
         </p>
       </div>
