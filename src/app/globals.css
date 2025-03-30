@@ -1,41 +1,127 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0c0f1a; /* 222.2 84% 4.9% */
-  --foreground: #e8f0ff; /* 210 40% 98% */
-  --muted: #2b2d33; /* 217.2 32.6% 17.5% */
-  --muted-foreground: #9ba3b8; /* 215 20.2% 65.1% */
-  --popover: #0c0f1a; /* 222.2 84% 4.9% */
-  --popover-foreground: #e8f0ff; /* 210 40% 98% */
-  --card: #0c0f1a; /* 222.2 84% 4.9% */
-  --card-foreground: #e8f0ff; /* 210 40% 98% */
-  --border: #2b2d33; /* 217.2 32.6% 17.5% */
-  --input: #2b2d33; /* 217.2 32.6% 17.5% */
-  --primary: #3f97f7; /* 217.2 91.2% 59.8% */
-  --primary-foreground: #1d202b; /* 222.2 47.4% 11.2% */
-  --secondary: #2b2d33; /* 217.2 32.6% 17.5% */
-  --secondary-foreground: #e8f0ff; /* 210 40% 98% */
-  --accent: #2b2d33; /* 217.2 32.6% 17.5% */
-  --accent-foreground: #e8f0ff; /* 210 40% 98% */
-  --destructive: #b12f2b; /* 0 62.8% 30.6% */
-  --destructive-foreground: #e8f0ff; /* 210 40% 98% */
-  --ring: #4496e6; /* 224.3 76.3% 48% */
-  --chart-1: #348bff; /* 220 70% 50% */
-  --chart-2: #39b27e; /* 160 60% 45% */
-  --chart-3: #ffbe26; /* 30 80% 55% */
-  --chart-4: #ba50ff; /* 280 65% 60% */
-  --chart-5: #ff5786; /* 340 75% 55% */
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --primary: 142.1 70.6% 45.3%;
+  --primary-foreground: 144.9 80.4% 10%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 0 0% 83.1%;
+  --chart-1: 0 0% 98%;
+  --chart-2: 0 0% 14.9%;
+  --chart-3: 0 0% 14.9%;
+  --chart-4: 0 0% 17.9%;
+  --chart-5: 0 3% 98%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --font-dm-sans-900: var(--font-dm-sans-900);
+  --font-dm-sans-500: var(--font-dm-sans-500);
+
+  --animate-bounce: bounce 1s infinite;
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateX(0px);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateX(-15px);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+}
+
+html {
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 60px; /* Hauteur de votre header */
+}
+
+.font-medium {
+  font-family: var(--font-dm-sans);
+  font-weight: 500;
+}
+
+.font-bold {
+  font-family: var(--font-dm-sans);
+  font-weight: 900;
 }
 
 body {
-  background: var(--background);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+h1,
+h2 {
+  font-family: var(--font-dm-sans);
+  font-weight: 900;
+}
+
+p {
+  font-family: var(--font-dm-sans);
+  font-weight: 400;
+  /* font-size: 1.125rem; */
+  line-height: 1.75rem;
+  letter-spacing: 0.03em;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.background-hero {
+  background-size: 48px 48px;
+  background-image: linear-gradient(
+      to left,
+      transparent,
+      rgba(255, 255, 255, 0.308) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to top,
+      transparent,
+      rgba(255, 255, 255, 0.308) 1px,
+      transparent 1px
+    );
+}
+.background-hero-circle {
+  background-image: radial-gradient(
+    circle,
+    rgba(226, 22, 22, 0),
+    hsl(var(--background)) 60%
+  );
 }
