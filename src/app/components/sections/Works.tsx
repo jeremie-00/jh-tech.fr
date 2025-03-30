@@ -8,7 +8,7 @@ export default function Works() {
   return (
     <ContainerSection id="projets">
       <ContentGrid title={datas.projets.title} text={datas.projets.text}>
-        <div className="w-full h-full grid min-lg:grid-cols-2 grid-cols-1 gap-8 p-2">
+        <div className="w-full h-full grid min-lg:grid-cols-2 grid-cols-1 gap-8">
           {datas.projets.cards.map((work, idx) => (
             <CustomCard
               key={idx}

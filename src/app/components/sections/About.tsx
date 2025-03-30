@@ -21,19 +21,21 @@ export default function About() {
     <ContainerSection id="about">
       <Content title={datas.about.title} text={datas.about.text}>
         <div className="min-lg:w-[46%] w-full h-1/2 flex flex-col items-center justify-center">
-          <Image
-            src={"/images/profilepicApropos.png"}
-            alt={"Logo JH"}
-            width={800}
-            height={800}
-            className="max-w-64 w-auto h-auto object-contain"
-            quality={90}
-          />
-          <span className="min-lg:w-1/2 w-2/3 h-1 rounded-lg bg-primary"></span>
+          <div className="relative">
+            <Image
+              src={"/images/profilepicApropos.png"}
+              alt={"Logo JH"}
+              width={800}
+              height={800}
+              className="w-64 h-auto object-contain"
+              quality={90}
+            />
+            <span className="block w-64 h-1 rounded-lg bg-primary"></span>
+          </div>
         </div>
       </Content>
       <Content title={datas.educations.title} text={educationsText}>
-        <div className="min-lg:w-1/2 max-lg:px-2 w-full h-full flex flex-col items-center justify-center order-2">
+        <div className="min-lg:w-1/2 w-full h-full flex flex-col items-center justify-center order-2">
           <CustomCard className="flex-col h-auto w-full" theme="default">
             {datas.educations.text.map((educ, idx) => (
               <CustomCard

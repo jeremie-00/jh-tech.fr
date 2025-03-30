@@ -11,7 +11,7 @@ export default function Skills() {
         title={datas.competences.title}
         text={datas.competences.text}
       >
-        <div className="w-full h-full grid min-lg:grid-cols-3 min-md:grid-cols-2 grid-cols-1 gap-8 px-2 py-12">
+        <div className="w-full h-full grid min-lg:grid-cols-3 min-md:grid-cols-2 grid-cols-1 gap-8">
           {datas.competences.cards.map((service, idx) => (
             <CustomCard
               key={idx}
@@ -36,7 +36,7 @@ export default function Skills() {
       </ContentGrid>
 
       <Content title={datas.stacks.title} text={datas.stacks.text}>
-        <div className="min-lg:w-[46%] w-full h-full flex flex-wrap items-center max-lg:justify-center gap-4 p-2  max-lg:order-2">
+        <div className="min-lg:w-[46%] w-full h-full flex flex-wrap items-center max-lg:justify-center gap-4 max-lg:order-2">
           {datas.stacks.cards.map((skill, idx) => (
             <span key={idx} className={`relative z-20 group`}>
               <CustomCard className="relative z-20" theme="icon">

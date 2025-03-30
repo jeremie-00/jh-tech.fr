@@ -145,7 +145,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full flex items-center justify-between px-8 py-3 bg-background/60 backdrop-blur-sm shadow-custom transition-transform duration-300`}
+      className={`sticky top-0 z-50 w-full flex items-center justify-between md:px-8 md:py-3 p-4 bg-background/60 backdrop-blur-sm shadow-custom transition-transform duration-300`}
     >
       <CustomBtn href="#home" theme="default" onClick={() => setHash("#home")}>
         <span
