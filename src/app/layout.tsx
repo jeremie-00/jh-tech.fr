@@ -12,11 +12,9 @@ const DMSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  viewport: "width=device-width, initial-scale=1",
   title: "Portfolio de Jérémie Hérault | Développeur Web",
   description:
     "Explorez le portfolio de Jérémie Hérault, développeur web spécialisé en React, Next.js et TailwindCSS. Découvrez des projets modernes, interactifs et performants.",
-  themeColor: "#0A0A0A",
   keywords: [
     "jh-tech",
     "portfolio",
