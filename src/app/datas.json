@@ -21,7 +21,7 @@
   "home": {
     "title": "Jérémie Hérault",
     "subtitle": "Développeur Web",
-    "description": "Passionné de développement web, je crée des applications modernes, de la conception au déploiement, avec un soin particulier pour l'expérience utilisateur. Mes compétences incluent React, Next.js et TypeScript.",
+    "description": "Passionné par le développement web, je conçois et déploie des applications **modernes**, **performantes** et **optimisées**, avec un soin particulier pour l'expérience utilisateur. Mon expertise couvre **React**, **Next.js** et **TypeScript**, me permettant de créer des interfaces **dynamiques**, **rapides** et **intuitives**.",
     "buttons": [
       {
         "title": "Github",
@@ -53,12 +53,12 @@
     "title": "Mon parcours",
     "text": [
       {
-        "date": "2025",
+        "date": "2025 - Aujourd'hui",
         "formation": "Dev. Web FullStack",
         "organisme": "Studi",
         "url": "/logos-ecoles/Studi_logo.svg",
         "alt": "Logo studi",
-        "text": "Cette formation enseigne les compétences essentielles pour développer des applications web complètes, aussi bien côté front-end qu'en back-end. Elle inclut la création d'interfaces interactives avec HTML5, CSS3, Ajax et React.js, la conception de pages dynamiques avec PHP et Symfony, ainsi que la gestion des bases de données relationnelles en SQL."
+        "text": "Cette formation **Studi** enseigne les compétences essentielles pour développer des applications web complètes, aussi bien côté **front-end** qu'en **back-end**. Elle inclut la création d'interfaces interactives avec **HTML5**, **CSS3**, **Ajax** et **React.js**, la conception de pages dynamiques avec **PHP** et **Symfony**, ainsi que la gestion des bases de données relationnelles en **SQL**."
       },
       {
         "date": "2024 - 2025",
@@ -66,7 +66,7 @@
         "organisme": "Openclassroom",
         "url": "/logos-ecoles/Logo_OpenClassrooms.png",
         "alt": "Logo openclassroom",
-        "text": "Cette formation enseigne les compétences essentielles pour concevoir et développer des applications web modernes. Elle couvre l’utilisation des technologies JavaScript, React.js, Node.js, tout en intégrant la réalisation de projets pratiques. Une approche agile est adoptée pour favoriser la gestion efficace des développements."
+        "text": "Cette formation **Openclassroom** enseigne les compétences essentielles pour concevoir et développer des applications **web modernes**. Elle couvre l’utilisation des technologies **JavaScript**, **React.js**, **Node.js**, tout en intégrant la réalisation de projets pratiques. Une approche **agile** est adoptée pour favoriser la gestion efficace des développements."
       }
     ]
   },

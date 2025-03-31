@@ -2,6 +2,9 @@ import datas from "../../datas.json";
 import { CustomBtn, IconName } from "../buttons/custom-buttons";
 import ToolTip from "../ui/ToolTip";
 
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 export default function Hero() {
   return (
     <section
@@ -21,9 +24,20 @@ export default function Hero() {
         </h2>
       </div>
 
-      <p className="min-sm:w-2/3 max-md:px-6 min-md:text-xl text-sm text-center">
-        {datas.home.description}
-      </p>
+      <div className="min-sm:w-2/3 max-md:px-6 min-md:text-xl text-sm text-center">
+        <ReactMarkdown
+          components={{
+            strong: ({ children }) => (
+              <strong className="text-primary/80 font-normal">
+                {children}
+              </strong>
+            ),
+          }}
+          remarkPlugins={[remarkGfm]}
+        >
+          {datas.home.description}
+        </ReactMarkdown>
+      </div>
 
       <div className="flex gap-6 flex-wrap">
         <CustomBtn

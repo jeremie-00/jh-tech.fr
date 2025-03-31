@@ -1,5 +1,9 @@
 import Separator from "./ui/Separator";
 
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 export function ContainerSection({
   id,
   children,
@@ -34,7 +38,20 @@ export function Content({
           {title}
         </h2>
         <Separator />
-        <p className="min-md:text-lg text-md text-left lg:pr-8">{text}</p>
+        <div className="min-md:text-lg text-md text-left lg:pr-8 font-light">
+          <ReactMarkdown
+            components={{
+              strong: ({ children }) => (
+                <strong className="text-primary/80 font-bold">
+                  {children}
+                </strong>
+              ),
+            }}
+            remarkPlugins={[remarkGfm]}
+          >
+            {text}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   );
@@ -51,14 +68,23 @@ export function ContentGrid({
 }) {
   return (
     <div className="flex flex-col items-start max-lg:gap-10 gap-16 p-2">
-      <div className="w-full h-full flex flex-col text-center md:items-center gap-8">
+      <div className="w-full h-full flex flex-col text-center items-left md:items-center gap-8">
         <h2 className="min-md:text-5xl text-4xl tracking-wider max-md:text-left">
           {title}
         </h2>
         <Separator />
-        <p className="min-md:text-xl text-lg md:w-2/3 max-md:text-left md:place-self-center">
-          {text}
-        </p>
+        <div className="min-md:text-xl text-lg md:w-2/3 max-md:text-left md:place-self-center">
+          <ReactMarkdown
+            components={{
+              strong: ({ children }) => (
+                <strong className="text-primary font-bold">{children}</strong>
+              ),
+            }}
+            remarkPlugins={[remarkGfm]}
+          >
+            {text}
+          </ReactMarkdown>
+        </div>
       </div>
       {children}
     </div>
