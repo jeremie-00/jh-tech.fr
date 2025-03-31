@@ -1,7 +1,11 @@
 import datas from "../../datas.json";
 import { CustomBtn, IconName } from "../buttons/custom-buttons";
 
-export default function Footer() {
+export default function Footer({
+  handleClick,
+}: {
+  handleClick: (href: string) => void;
+}) {
   return (
     <footer className="relative w-full h-full flex items-center justify-between md:p-12 p-4 z-40 bg-background border-t border-primary mt-24 text-foreground/60">
       <div className="flex flex-col items-left text-[0.75rem] gap-1">
@@ -10,6 +14,7 @@ export default function Footer() {
           theme="footer"
           size="xs"
           className="justify-start"
+          onClick={() => handleClick("#home")}
         >
           <span className="flex items-center gap-2 font-bold tracking-wider">
             <div className="w-2 h-2 rounded-full bg-primary self-center" />

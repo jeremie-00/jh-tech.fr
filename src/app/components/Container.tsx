@@ -1,6 +1,7 @@
+"use client";
 import Separator from "./ui/Separator";
 
-import React from "react";
+import React, { useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -11,8 +12,10 @@ export function ContainerSection({
   id: string;
   children: React.ReactNode;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
   return (
     <section
+      ref={ref}
       id={id}
       className="w-full h-full flex flex-col items-center justify-center gap-32 mb-34 lg:mb-96"
     >

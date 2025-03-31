@@ -8,10 +8,10 @@ import { CustomBtn } from "../buttons/custom-buttons";
 interface NavBarreProps {
   links: { title: string; href: string }[];
   hash: string;
-  setHash: React.Dispatch<React.SetStateAction<string>>;
+  handleClick: (href: string) => void;
 }
 
-function NavBarre({ links, hash, setHash }: NavBarreProps) {
+function NavBarre({ links, hash, handleClick }: NavBarreProps) {
   return (
     <nav>
       <ul className="flex items-center justify-center gap-1 px-8 py-2">
@@ -24,7 +24,7 @@ function NavBarre({ links, hash, setHash }: NavBarreProps) {
               className={`px-5 py-1 ${
                 hash === link.href ? "bg-primary-foreground" : ""
               }`}
-              onClick={() => setHash(link.href)}
+              onClick={() => handleClick(link.href)}
             >
               {link.title}
             </CustomBtn>
@@ -35,12 +35,12 @@ function NavBarre({ links, hash, setHash }: NavBarreProps) {
   );
 }
 
-function NavMobile({ links, hash, setHash }: NavBarreProps) {
+function NavMobile({ links, hash, handleClick }: NavBarreProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const handleClick = (href: string) => {
-    setHash(href);
+  const handleClickandToggleMenu = (href: string) => {
+    handleClick(href);
     toggleMenu();
   };
 
@@ -62,7 +62,6 @@ function NavMobile({ links, hash, setHash }: NavBarreProps) {
   return (
     <div className="flex items-center gap-1">
       <CustomBtn
-        //href={link.href}
         theme="outline"
         ariaLabel={`Menu`}
         iconName="menu"
@@ -110,7 +109,7 @@ function NavMobile({ links, hash, setHash }: NavBarreProps) {
                           theme="hoverPrimary"
                           className={hash === link.href ? "text-primary" : ""}
                           ariaLabel={`Aller à la section ${link.title}`}
-                          onClick={() => handleClick(link.href)}
+                          onClick={() => handleClickandToggleMenu(link.href)}
                         >
                           {link.title}
                         </CustomBtn>
@@ -127,29 +126,93 @@ function NavMobile({ links, hash, setHash }: NavBarreProps) {
   );
 }
 
-export default function Header() {
+export default function Header({
+  hash,
+  setHash,
+  isScrolling,
+  handleClick,
+}: {
+  hash: string;
+  setHash: React.Dispatch<React.SetStateAction<string>>;
+  isScrolling: boolean;
+  handleClick: (href: string) => void;
+}) {
   const isMobile = useIsMobile();
-  const [hash, setHash] = useState("");
+
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    // Mettre à jour le hash lors du chargement de la page ou des changements d'URL
-    const updateHash = () => setHash(window.location.hash);
+    const handleScroll = () => {
+      if (isScrolling) return;
+      const sections = document.querySelectorAll("section[id]");
+      let currentHash = "";
 
-    // Initialisation
-    updateHash();
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2
+        ) {
+          currentHash = `#${section.id}`;
+        }
+      });
 
-    // Ajouter un écouteur pour les changements de hash
-    window.addEventListener("hashchange", updateHash);
+      if (currentHash && currentHash !== hash) {
+        setHash(currentHash);
+        window.history.replaceState(null, "", currentHash);
+      }
+    };
 
-    // Nettoyage
-    return () => window.removeEventListener("hashchange", updateHash);
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hash, isScrolling, setHash]);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries.find((entry) => entry.isIntersecting);
+        if (visibleSection) {
+          const newHash = `#${visibleSection.target.id}`;
+          setHash(newHash);
+          window.history.replaceState(null, "", newHash);
+        }
+      },
+      { rootMargin: "-50% 0px -50% 0px", threshold: 0.1 }
+    );
+
+    sections.forEach((section) => observerRef.current?.observe(section));
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, [setHash]);
+
+  useEffect(() => {
+    const updateHashOnLoad = () => {
+      if (window.location.hash) {
+        setHash(window.location.hash);
+        document
+          .getElementById(window.location.hash.slice(1))
+          ?.scrollIntoView();
+      }
+    };
+
+    updateHashOnLoad();
+    window.addEventListener("hashchange", updateHashOnLoad);
+    return () => window.removeEventListener("hashchange", updateHashOnLoad);
+  }, [setHash]);
 
   return (
     <header
       className={`sticky top-0 z-50 w-full flex items-center justify-between md:px-8 md:py-3 p-4 bg-background/60 backdrop-blur-sm shadow-custom transition-transform duration-300`}
     >
-      <CustomBtn href="#home" theme="default" onClick={() => setHash("#home")}>
+      <CustomBtn
+        href="#home"
+        theme="default"
+        onClick={() => handleClick("#home")}
+      >
         <span
           className={`w-fit h-fit flex items-center gap-2 text-xl font-bold tracking-wider transition-all duration-300 ease-in-out ${
             hash === "#home" ? "text-primary" : ""
@@ -164,9 +227,9 @@ export default function Header() {
         </span>
       </CustomBtn>
       {isMobile ? (
-        <NavMobile links={datas.links} hash={hash} setHash={setHash} />
+        <NavMobile links={datas.links} hash={hash} handleClick={handleClick} />
       ) : (
-        <NavBarre links={datas.links} hash={hash} setHash={setHash} />
+        <NavBarre links={datas.links} hash={hash} handleClick={handleClick} />
       )}
     </header>
   );
