@@ -31,6 +31,8 @@ export const metadata: Metadata = {
     "applications web",
     "développement front-end",
     "développement back-end",
+    "Oise",
+    "Neuilly-en-Thelle",
   ],
 
   authors: [{ name: "Jérémie Hérault" }],
