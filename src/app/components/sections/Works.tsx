@@ -31,7 +31,7 @@ export default function Works() {
                 {work.skills?.map((skill, i) => (
                   <span
                     key={i}
-                    className="rounded-md px-3 py-1 text-sm text-foreground bg-secondary"
+                    className="rounded-sm px-3 py-0.5 text-sm text-black bg-muted-foreground"
                   >
                     {skill}
                   </span>

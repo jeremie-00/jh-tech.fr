@@ -28,25 +28,27 @@ export default function Footer() {
       </div>
 
       <div className="flex items-center place-self-start gap-4 max-md:flex-col">
-        {datas.home.buttons.map((button, idx) => {
-          if (button.title !== "Contact") {
-            return (
-              <span key={idx} className={`relative z-20 group`}>
-                <CustomBtn
-                  //key={button.title}
-                  href={button.href}
-                  theme="footer"
-                  size="lg"
-                  target={button.target}
-                  iconName={button.iconName as IconName}
-                  ariaLabel={`Aller sur ${button.title}`}
-                >
-                  <span className="sr-only">{button.title}</span>
-                </CustomBtn>
-              </span>
-            );
-          }
-        })}
+        <div className="flex gap-4">
+          {datas.home.buttons.map((button, idx) => {
+            if (button.title !== "Contact") {
+              return (
+                <span key={idx} className={`relative z-20 group`}>
+                  <CustomBtn
+                    //key={button.title}
+                    href={button.href}
+                    theme="footer"
+                    size="lg"
+                    target={button.target}
+                    iconName={button.iconName as IconName}
+                    ariaLabel={`Aller sur ${button.title}`}
+                  >
+                    <span className="sr-only">{button.title}</span>
+                  </CustomBtn>
+                </span>
+              );
+            }
+          })}
+        </div>
         <CustomBtn
           href="/CV-Jeremie-Herault.pdf"
           theme="outline"

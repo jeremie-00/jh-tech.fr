@@ -42,6 +42,7 @@
   --color-accent-foreground: hsl(var(--accent-foreground));
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-ring: hsl(var(--ring));
   --color-chart-1: hsl(var(--chart-1));
   --color-chart-2: hsl(var(--chart-2));
   --color-chart-3: hsl(var(--chart-3));
@@ -104,7 +105,7 @@ h2 {
 
 p {
   font-family: var(--font-dm-sans);
-  font-weight: 400;
+  /* font-weight: 400; */
   /* font-size: 1.125rem; */
   line-height: 1.75rem;
   letter-spacing: 0.03em;
