@@ -1,73 +1,38 @@
-import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import datas from "../../datas.json";
-import { CustomBtn, IconName } from "../buttons/custom-buttons";
-import { CustomCard } from "../cards/CustomCard";
-import { ContainerSection, ContentGrid } from "../Container";
-import Separator from "../ui/Separator";
+import { ContainerSection, Wrapper } from "../Container";
+import { Slider } from "../Slider";
 
 export default function Works() {
   return (
     <ContainerSection id="projets">
-      <ContentGrid title={datas.projets.title} text={datas.projets.text}>
-        <div className="w-full h-full grid min-lg:grid-cols-2 grid-cols-1 gap-8">
-          {datas.projets.cards.map((work, idx) => (
-            <CustomCard
-              key={idx}
-              className="flex-col h-auto w-full gap-4 p-4"
-              theme="default"
-            >
-              <Image
-                src={work.url}
-                alt={work.alt}
-                width={850}
-                height={550}
-                className="rounded-md object-cover w-full h-72 max-lg:h-full"
-                quality={90}
-              />
-              <h3 className="text-2xl font-bold">{work.name}</h3>
-              <Separator />
-              <h4 className="text-[1rem] flex flex-1">{work.text}</h4>
-              <div className="w-full flex flex-wrap content-start gap-2">
-                {work.skills?.map((skill, i) => (
-                  <span
-                    key={i}
-                    className="rounded-sm px-3 py-0.5 text-sm text-black bg-muted-foreground"
-                  >
-                    {skill}
-                  </span>
-                ))}
+      <Wrapper>
+        <div className="w-full h-full flex flex-col text-center items-center gap-24 py-32 ">
+          <div className="w-full h-full flex max-xl:flex-col items-center justify-center max-xl:gap-14">
+            <div className="w-full max-w-[800px] h-full text-left place-items-start space-y-8 px-4">
+              <div className="min-md:text-5xl text-4xl tracking-widest  font-light">
+                <ReactMarkdown
+                  components={{
+                    strong: ({ children }) => (
+                      <strong className="text-primary tracking-widest  font-light">
+                        {children}
+                      </strong>
+                    ),
+                  }}
+                  remarkPlugins={[remarkGfm]}
+                >
+                  {datas.projets.subtitle}
+                </ReactMarkdown>
               </div>
-              <div className="w-full flex  content-start gap-2">
-                {work.liens.map((lien, idx) => {
-                  if (lien.target) {
-                    return (
-                      <div
-                        key={idx}
-                        className="md:w-full flex items-center gap-12 relative group"
-                      >
-                        <CustomBtn
-                          href={lien.href}
-                          theme="card"
-                          size="xl"
-                          className=""
-                          target={lien.target}
-                          iconName={lien.iconName as IconName}
-                          ariaLabel={`Aller sur ${lien.title}`}
-                        >
-                          <span className="md:text-[1.25rem] text-[1rem]">
-                            {lien.title}
-                          </span>
-                          <span className="sr-only">{lien.title}</span>
-                        </CustomBtn>
-                      </div>
-                    );
-                  }
-                })}
+              <div className="text-md sm:text-lg text-muted-foreground font-light">
+                {datas.projets.text}
               </div>
-            </CustomCard>
-          ))}
+            </div>
+            <Slider cards={datas.projets.cards} />
+          </div>
         </div>
-      </ContentGrid>
+      </Wrapper>
     </ContainerSection>
   );
 }
