@@ -41,7 +41,8 @@ export type ThemeName =
   | "highlight"
   | "hoverPrimary"
   | "outline"
-  | "card"
+  | "round"
+  | "form"
   | "footer";
 
 type SizeName = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
@@ -90,8 +91,10 @@ const THEME_STYLES = {
   highlight: "flex items-center gap-2 rounded-md hover:bg-primary-foreground",
   hoverPrimary: "text-foreground hover:text-primary",
   outline:
-    "flex gap-2 rounded-md p-2 bg-background border border-border hover:border-primary/80 hover:text-primary",
-  card: "md:w-full rounded-md md:px-8 px-2 md:gap-4 gap-2 py-1 bg-primary-foreground text-foreground hover:bg-primary/80",
+    "flex gap-2 rounded-md p-2 bg-none border border-border hover:border-primary/80 hover:text-primary",
+  form: "flex gap-2 w-full bg-card p-2 text-foreground hover:bg-primary-foreground/80 z-20",
+  round:
+    "rounded-full p-2 bg-foreground/10 text-foreground/80 hover:bg-primary-foreground/80 z-20",
   footer: "text-foreground/60 hover:text-primary",
 };
 
@@ -121,7 +124,7 @@ export const CustomBtn = (props: ButtonProps) => {
   } = props;
 
   const baseClass =
-    "flex items-center justify-center transition-all duration-300 ease-in-out cursor-pointer";
+    "flex items-center justify-center transition-all duration-300 ease-in-out";
 
   const getThemeClasses = () => {
     const themeStyle = THEME_STYLES[theme];
@@ -140,7 +143,7 @@ export const CustomBtn = (props: ButtonProps) => {
       getThemeClasses(),
       getSizeClasses(),
       className,
-      disabled && "opacity-40 cursor-not-allowed hover:border-border"
+      disabled ? "opacity-40 cursor-not-allowed" : "cursor-pointer"
     ),
     "aria-label": ariaLabel,
   };

@@ -21,7 +21,8 @@
   "home": {
     "title": "Jérémie Hérault",
     "subtitle": "Développeur Web",
-    "description": "Passionné par le développement web, je conçois et déploie des applications **modernes**, **performantes** et **optimisées**, avec un soin particulier pour l'expérience utilisateur. Mon expertise couvre **React**, **Next.js** et **TypeScript**, me permettant de créer des interfaces **dynamiques**, **rapides** et **intuitives**.",
+    "description": "Passionné par le développement web, je conçois et déploie des applications **modernes**, **performantes** et **optimisées**.",
+    "old": ", avec un soin particulier pour l'expérience utilisateur. Mon expertise couvre **React**, **Next.js** et **TypeScript**, me permettant de créer des interfaces **dynamiques**, **rapides** et **intuitives**.",
     "buttons": [
       {
         "title": "Github",
@@ -46,8 +47,10 @@
   },
 
   "about": {
-    "title": "A propos de moi",
-    "text": "Ancien électrotechnicien reconverti en développeur web. Je suis passionné par la création d'interfaces modernes et performantes. Rigoureux, organisé et toujours en quête d'apprentissage. Je mets à profit mes compétences techniques pour répondre aux besoins des utilisateurs."
+    "title": "A propos",
+    "subtitle": "**Parlons de moi**",
+    "text": "\" Hey, moi c'est Jérémie ancien électrotechnicien reconverti en développeur web. Rigoureux, organisé et toujours en quête d'apprentissage. Je mets à profit mes compétences techniques pour répondre aux besoins des utilisateurs. \"",
+    "old": " Je suis passionné par la création d'interfaces modernes et performantes. "
   },
   "educations": {
     "title": "Mon parcours",
@@ -58,7 +61,7 @@
         "organisme": "Studi",
         "url": "/logos-ecoles/Studi_logo.svg",
         "alt": "Logo studi",
-        "text": "Cette formation **Studi** enseigne les compétences essentielles pour développer des applications web complètes, aussi bien côté **front-end** qu'en **back-end**. Elle inclut la création d'interfaces interactives avec **HTML5**, **CSS3**, **Ajax** et **React.js**, la conception de pages dynamiques avec **PHP** et **Symfony**, ainsi que la gestion des bases de données relationnelles en **SQL**."
+        "text": "\" Cette formation **Studi** enseigne les compétences essentielles pour développer des applications web complètes, aussi bien côté **front-end** qu'en **back-end**. Elle inclut la création d'interfaces interactives avec **HTML5**, **CSS3**, **Ajax** et **React.js**, la conception de pages dynamiques avec **PHP** et **Symfony**, ainsi que la gestion des bases de données relationnelles en **SQL**. \" "
       },
       {
         "date": "2024 - 2025",
@@ -66,48 +69,55 @@
         "organisme": "Openclassroom",
         "url": "/logos-ecoles/Logo_OpenClassrooms.png",
         "alt": "Logo openclassroom",
-        "text": "Cette formation **Openclassroom** enseigne les compétences essentielles pour concevoir et développer des applications **web modernes**. Elle couvre l’utilisation des technologies **JavaScript**, **React.js**, **Node.js**, tout en intégrant la réalisation de projets pratiques. Une approche **agile** est adoptée pour favoriser la gestion efficace des développements."
+        "text": "\" Cette formation **Openclassroom** enseigne les compétences essentielles pour concevoir et développer des applications **web modernes**. Elle couvre l’utilisation des technologies **JavaScript**, **React.js**, **Node.js**, tout en intégrant la réalisation de projets pratiques. Une approche **agile** est adoptée pour favoriser la gestion efficace des développements. \""
       }
     ]
   },
 
   "competences": {
-    "title": "Mes compétences en tant que Dev.",
-    "text": "En tant que développeur, je combine expertise technique et passion pour créer des solutions web efficaces. J'ai une maîtrise complète du développement frontend et backend, ainsi que des bases solides en gestion de données et optimisation des performances, afin de répondre aux besoins et aux défis des projets modernes.",
+    "title": "services",
+    "subtitle": "Mes **compétences en tant que Dev**.",
+    "text": "En tant que développeur, je combine expertise technique et passion pour créer des solutions web efficaces. ",
     "cards": [
       {
         "name": "Frontend",
-        "text": "Conception d'interfaces modernes et réactives, optimisées pour une expérience utilisateur fluide sur tous les appareils. Utilisation des dernières technologies comme React, Next.js, pour créer des sites rapides et intuitifs.",
+        "text": "Conception d'interfaces modernes et réactives, optimisées pour une expérience utilisateur fluide.",
+        "old": " sur tous les appareils. Utilisation des dernières technologies comme React, Next.js, pour créer des sites rapides et intuitifs.",
         "url": "/flaticon/web-browser.png",
         "alt": "Frontend web"
       },
       {
         "name": "Backend",
-        "text": "Développement de l'architecture serveur et gestion des APIs pour des applications web dynamiques. Utilisation de technologies comme Node.js, Express.js, ou Laravel pour assurer performance et évolutivité.",
+        "text": "Développement de l'architecture serveur et gestion des APIs pour des applications web dynamiques.",
+        "old": "Utilisation de technologies comme Node.js, Express.js, ou Laravel pour assurer performance et évolutivité.",
         "url": "/flaticon/server.png",
         "alt": "Backend web"
       },
       {
         "name": "BDD",
-        "text": "Gestion des données avec des bases de données relationnelles et non relationnelles. Utilisation de MongoDB et MySQL pour garantir une gestion optimale des données et une performance accrue des applications.",
+        "text": "Gestion des données avec des bases de données relationnelles et non relationnelles.",
+        "old": " Utilisation de MongoDB et MySQL pour garantir une gestion optimale des données et une performance accrue des applications.",
         "url": "/flaticon/options.png",
         "alt": "Service web"
       },
       {
         "name": "Ui/Ux",
-        "text": "Création de designs soignés et ergonomiques pour offrir une expérience utilisateur agréable et intuitive. Utilisation d'outils comme Tailwind CSS pour des interfaces élégantes et performantes.",
+        "text": "Création de designs soignés et ergonomiques pour offrir une expérience utilisateur agréable et intuitive.",
+        "old": " Utilisation d'outils comme Tailwind CSS pour des interfaces élégantes et performantes.",
         "url": "/flaticon/color.png",
         "alt": "UI/UX design"
       },
       {
         "name": "SEO",
-        "text": "Optimisation des sites pour les moteurs de recherche afin d'améliorer leur visibilité. Application de bonnes pratiques SEO, incluant l'optimisation des mots-clés, des performances et de la structure du site.",
+        "text": "Optimisation des sites pour les moteurs de recherche afin d'améliorer leur visibilité incluant l'optimisation des mots-clés, des performances et de la structure du site.",
+        "old": " Application de bonnes pratiques SEO, incluant l'optimisation des mots-clés, des performances et de la structure du site.",
         "url": "/flaticon/seo-and-web.png",
         "alt": "SEO"
       },
       {
         "name": "Responsive",
-        "text": "Adaptation des sites web à tous types d'appareils. Je m'assure que le design et les fonctionnalités soient optimisés pour offrir une expérience homogène sur mobile, tablette et desktop.",
+        "text": "Adaptation des sites web à tous types d'appareils pour offrir une expérience homogène sur mobile, tablette et desktop.",
+        "old": " Je m'assure que le design et les fonctionnalités soient optimisés pour offrir une expérience homogène sur mobile, tablette et desktop.",
         "url": "/flaticon/smartphone.png",
         "alt": "Responsive web"
       }
@@ -115,7 +125,7 @@
   },
 
   "stacks": {
-    "title": "Voici les stacks que je privilégie.",
+    "title": "**Les stacks** que je privilégie.",
     "text": "Je travaille avec les technologies les plus modernes pour créer des applications robustes et performantes. Que ce soit pour le développement frontend, backend, ou la gestion des bases de données, je m’appuie sur des outils de pointe comme React, Node.js, et bien d'autres pour offrir une expérience utilisateur optimale et un code fiable.",
 
     "cards": [
@@ -218,13 +228,15 @@
     ]
   },
   "projets": {
-    "title": "Découvrez mes réalisations.",
+    "title": "projets",
+    "subtitle": "Découvrez **mes réalisations**.",
     "text": "Explorez mes projets et plongez dans mes créations uniques.",
     "cards": [
       {
         "name": "Kasa",
         "text": "Créer le front-end d'une application de location immobilière avec Vite, React, et React Router, en respectant les maquettes fournies et en exploitant des données simulées.",
         "url": "/projet/kasa/cover.webp",
+        "url_mobile": "/projet/kasa/cover-mobile.png",
         "alt": "Image du site de kasa",
         "liens": [
           {
@@ -247,6 +259,7 @@
         "name": "Portfolio",
         "text": "Une application web pour portfolio personnel.",
         "url": "/projet/portfolio/cover.webp",
+        "url_mobile": "/projet/portfolio/cover-mobile.webp",
         "alt": "Image portfolio",
         "liens": [
           {
@@ -270,6 +283,7 @@
         "name": "OhMyFood",
         "text": "Développer une interface mobile-first pour une start-up, en utilisant Sass, des animations CSS et Git/GitHub pour la gestion de version. L'intégration se fera à partir des maquettes et du prototype Figma pour créer un site réactif.",
         "url": "/projet/ohmyfood/cover.webp",
+        "url_mobile": "/projet/ohmyfood/cover-mobile.png",
         "alt": "Image du site ohmyfood",
         "liens": [
           {
@@ -292,6 +306,7 @@
         "name": "Booki",
         "text": "Intégration d'une maquette Figma en HTML & CSS pour le site web Booki. Respecter les designs et les spécifications visuelles du projet.",
         "url": "/projet/booki/cover.png",
+        "url_mobile": "/projet/booki/cover-mobile.png",
         "alt": "Image du site booki",
         "liens": [
           {

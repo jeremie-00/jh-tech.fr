@@ -1,6 +1,6 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, Space_Grotesk } from "next/font/google";
 import { ToastNotification } from "./components/ui/toast";
 import "./globals.css";
 
@@ -9,6 +9,13 @@ const DMSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const SpaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -87,7 +94,9 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#0A0A0A" />
       </head>
-      <body className={`${DMSans.variable} antialiased`}>
+      <body
+        className={`${DMSans.variable} ${SpaceGrotesk.variable} antialiased`}
+      >
         {children}
         <ToastNotification />
         <SpeedInsights />
