@@ -1,56 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: 0 0% 3.9%;
-  --foreground: 0 0% 98%;
-  --muted: 0 0% 14.9%;
-  --muted-foreground: 0 0% 63.9%;
-  --popover: 0 0% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --card: 0 0% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --border: 0 0% 14.9%;
-  --input: 0 0% 14.9%;
-  --primary: 142.1 70.6% 45.3%;
-  --primary-foreground: 144.9 80.4% 10%;
-  --secondary: 0 0% 14.9%;
-  --secondary-foreground: 0 0% 98%;
-  --accent: 0 0% 14.9%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --ring: 0 0% 83.1%;
-  --chart-1: 0 0% 98%;
-  --chart-2: 0 0% 14.9%;
-  --chart-3: 0 0% 14.9%;
-  --chart-4: 0 0% 17.9%;
-  --chart-5: 0 3% 98%;
+  --background: hsl(0 0% 3.9%);
+  --foreground: hsl(0 0% 98%);
+  --muted: hsl(0 0% 14.9%);
+  --muted-foreground: hsl(0 0% 63.9%);
+  --popover: hsl(0 0% 3.9%);
+  --popover-foreground: hsl(0 0% 98%);
+  --card: hsl(0 0% 14.9%);
+  --card-foreground: hsl(0 0% 98%);
+  --border: hsl(0 0% 14.9%);
+  --input: hsl(0 0% 14.9%);
+  --primary: hsl(142.1 70.6% 45.3%);
+  --primary-foreground: hsl(144.9 80.4% 10%);
+  --secondary: hsl(0 0% 10%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --accent: hsl(0 0% 14.9%);
+  --accent-foreground: hsl(0 0% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --ring: hsl(0 0% 83.1%);
+  --chart-1: hsl(0 0% 98%);
+  --chart-2: hsla(142, 71%, 45%, 0.767);
+  --chart-3: hsl(0 0% 14.9%);
+  --chart-4: hsl(0 0% 17.9%);
+  --chart-5: hsl(0 3% 98%);
 }
 
 @theme inline {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-ring: hsl(var(--ring));
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
   --font-dm-sans-900: var(--font-dm-sans-900);
   --font-dm-sans-500: var(--font-dm-sans-500);
-
+  --font-space-grotesk-300: var(--font-space-grotesk-300);
   --animate-bounce: bounce 1s infinite;
 
   @keyframes bounce {
@@ -79,58 +79,33 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-space-grotesk);
 }
 
 section {
-  scroll-margin-top: 60px; /* Hauteur de votre header */
+  scroll-margin-top: 60px;
 }
 
-.font-medium {
-  font-family: var(--font-dm-sans);
-  font-weight: 500;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--foreground) !important;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
-.font-bold {
-  font-family: var(--font-dm-sans);
-  font-weight: 900;
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--primary-foreground);
 }
 
-h1,
-h2 {
-  font-family: var(--font-dm-sans);
-  font-weight: 900;
-}
-
-p {
-  font-family: var(--font-dm-sans);
-  /* font-weight: 400; */
-  /* font-size: 1.125rem; */
-  line-height: 1.75rem;
-  letter-spacing: 0.03em;
-  color: var(--foreground);
-}
-
-.background-hero {
-  background-size: 48px 48px;
+.background-about {
   background-image: linear-gradient(
-      to left,
-      transparent,
-      rgba(255, 255, 255, 0.308) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to top,
-      transparent,
-      rgba(255, 255, 255, 0.308) 1px,
-      transparent 1px
-    );
-}
-.background-hero-circle {
-  background-image: radial-gradient(
-    circle,
-    rgba(226, 22, 22, 0),
-    hsl(var(--background)) 60%
+    to top,
+    transparent 12rem,
+    var(--secondary) 12rem
   );
 }

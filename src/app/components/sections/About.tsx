@@ -2,9 +2,9 @@
 import Image from "next/image";
 import { useState } from "react";
 import datas from "../../datas.json";
+import { ContainerSection, ContentFlexCol, Wrapper } from "../Container";
 import { CustomBtn } from "../buttons/custom-buttons";
-import { CustomCard } from "../cards/CustomCard";
-import { ContainerSection, Content } from "../Container";
+import Blockquote from "../ui/Blockquote";
 
 export default function About() {
   const [educationsText, setEducationsText] = useState(
@@ -19,67 +19,73 @@ export default function About() {
 
   return (
     <ContainerSection id="about">
-      <Content title={datas.about.title} text={datas.about.text}>
-        <div className="w-full h-1/2 flex flex-1 flex-col items-center justify-center">
-          <div className="relative">
+      <ContentFlexCol>
+        <div className="background-about flex flex-col items-center justify-start text-center gap-8 pt-14">
+          <h2 className="min-md:text-xl text-lg font-normal text-foreground tracking-[0.5em] uppercase">
+            {datas.about.title}
+          </h2>
+          <div className="flex flex-col gap-12 md:w-2/3 xl:w-1/2">
+            <Blockquote text={datas.about.text} />
             <Image
-              src={"/images/profilepicApropos.png"}
-              alt={"Logo JH"}
+              src={"/images/about.png"}
+              alt={
+                "Main sur un clavier qui tient un stylo, des ecritures de code en premier plan."
+              }
               width={800}
               height={800}
-              className="w-64 h-auto object-contain"
+              className="aspect:16/9 shadow-lg place-self-center object-cover"
               quality={90}
             />
-            <span className="block w-64 h-1 rounded-lg bg-primary"></span>
           </div>
         </div>
-      </Content>
-      <Content title={datas.educations.title} text={educationsText}>
-        <div className="w-full h-full flex flex-1 flex-col items-center justify-center order-2">
-          <CustomCard
-            className="flex-col h-auto w-full overflow-hidden"
-            theme="default"
-          >
-            {datas.educations.text.map((educ, idx) => (
-              <CustomCard
-                key={idx}
-                theme="none"
-                className="flex flex-row items-center h-auto w-full gap-8 "
-              >
-                <CustomBtn
-                  theme="highlight"
-                  className={` ${
-                    isActive === idx ? "bg-primary-foreground/60" : ""
-                  } flex-1 sm:gap-8 gap-3 px-4 py-3 rounded-none`}
-                  onClick={() => handleClick(educ.text, idx)}
-                >
-                  <Image
-                    src={educ.url}
-                    alt={educ.alt}
-                    width={50}
-                    height={50}
-                    className=""
-                    quality={90}
-                  />
-                  <div className="w-fit h-full flex flex-1 flex-col gap-2">
-                    <h3 className="w-fit lg:text-xl text-sm text-left">
-                      {educ.organisme}
-                    </h3>
 
-                    <h3 className="w-fit lg:text-xl text-sm text-left">
-                      {educ.formation}
-                    </h3>
+        <Wrapper>
+          <div className="lg:max-w-2/3 flex flex-col items-center justify-center mx-auto gap-8">
+            <div className="flex flex-col flex-1 justify-center gap-8  px-4">
+              <h2 className="min-md:text-xl text-lg font-normal text-foreground tracking-[0.5em] uppercase">
+                {datas.educations.title}
+              </h2>
+
+              <div className="w-full h-full flex flex-col flex-1">
+                {datas.educations.text.map((educ, idx) => (
+                  <div key={idx} className="flex border-b-4 border-border ">
+                    <CustomBtn
+                      theme="default"
+                      className={` ${
+                        isActive === idx ? "bg-foreground/3" : ""
+                      } flex-1 sm:gap-8 gap-3 px-4 lg:py-8 py-4 rounded-none`}
+                      onClick={() => handleClick(educ.text, idx)}
+                    >
+                      <Image
+                        src={educ.url}
+                        alt={educ.alt}
+                        width={50}
+                        height={50}
+                        className=""
+                        quality={90}
+                      />
+                      <div className="w-full h-full flex flex-1 flex-col gap-2 ">
+                        <h3 className="w-full lg:text-lg text-sm text-left">
+                          {educ.organisme}
+                        </h3>
+
+                        <h3 className="w-full lg:text-md text-sm text-left text-muted-foreground">
+                          {educ.formation}
+                        </h3>
+                      </div>
+
+                      <h3 className="lg:text-md text-sm text-muted-foreground place-self-end">
+                        {educ.date}
+                      </h3>
+                    </CustomBtn>
                   </div>
-
-                  <h3 className="lg:text-xl text-sm text-primary">
-                    {educ.date}
-                  </h3>
-                </CustomBtn>
-              </CustomCard>
-            ))}
-          </CustomCard>
-        </div>
-      </Content>
+                ))}
+              </div>
+              <Blockquote text={educationsText} />
+            </div>
+          </div>
+        </Wrapper>
+      </ContentFlexCol>
     </ContainerSection>
   );
 }
