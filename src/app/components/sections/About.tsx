@@ -20,12 +20,15 @@ export default function About() {
   return (
     <ContainerSection id="about">
       <ContentFlexCol>
-        <div className="background-about flex flex-col items-center justify-start text-center gap-8 pt-14">
+        <div className="background-about flex flex-col items-center justify-start md:text-center text-left gap-8 pt-14">
           <h2 className="min-md:text-xl text-lg font-normal text-foreground tracking-[0.5em] uppercase">
             {datas.about.title}
           </h2>
           <div className="flex flex-col gap-12 md:w-2/3 xl:w-1/2">
-            <Blockquote text={datas.about.text} />
+            <div className="px-4">
+              <Blockquote text={datas.about.text} />
+            </div>
+
             <Image
               src={"/images/about.png"}
               alt={
