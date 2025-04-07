@@ -14,16 +14,14 @@ interface NavBarreProps {
 function NavBarre({ links, hash, handleClick }: NavBarreProps) {
   return (
     <nav>
-      <ul className="flex items-center justify-center gap-1 px-8 py-2">
+      <ul className="flex items-center justify-center gap-1 px-8 py-2 max-md:hidden">
         {links.map((link) => (
           <li key={link.title} className="relative">
             <CustomBtn
               href={link.href}
               theme="highlight"
               ariaLabel={`Aller à la section ${link.title}`}
-              className={`px-5 py-1 ${
-                hash === link.href ? "bg-primary-foreground" : ""
-              }`}
+              className={`px-5 py-1 ${hash === link.href ? "bg-card" : ""}`}
               onClick={() => handleClick(link.href)}
             >
               {link.title}
@@ -206,7 +204,7 @@ export default function Header({
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full flex items-center justify-between md:px-8 md:py-3 p-4 bg-background/60 backdrop-blur-sm shadow-custom transition-transform duration-300`}
+      className={`sticky top-0 z-50 w-full flex items-center justify-between md:px-8 md:py-3 p-4 bg-background/60 backdrop-blur-sm transition-transform duration-300`}
     >
       <CustomBtn
         href="#home"
@@ -219,7 +217,7 @@ export default function Header({
           }`}
         >
           <div
-            className={`w-3 h-3 rounded-full  self-center translate-y-[0.125rem] ${
+            className={`w-3 h-3 rounded-full self-center translate-y-[0.125rem] ${
               hash === "#home" ? "bg-foreground" : "bg-primary"
             }`}
           />
