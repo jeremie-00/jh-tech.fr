@@ -20,8 +20,8 @@ export default function About() {
   return (
     <ContainerSection id="about">
       <ContentFlexCol>
-        <div className="background-about flex flex-col items-center justify-start md:text-center text-left gap-8 pt-14">
-          <h2 className="min-md:text-xl text-lg font-normal text-foreground tracking-[0.5em] uppercase">
+        <div className="background-about flex flex-col md:items-center items-start justify-start md:text-center text-left gap-8 pt-14">
+          <h2 className="min-md:text-xl text-lg font-normal text-foreground tracking-[0.5em] uppercase px-4">
             {datas.about.title}
           </h2>
           <div className="flex flex-col gap-12 md:w-2/3 xl:w-1/2">
