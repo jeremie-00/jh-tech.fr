@@ -40,7 +40,7 @@ export function FormulaireContact() {
       <CustomBtn
         type="submit"
         disabled={isDisabled}
-        theme="primary"
+        theme="form"
         iconName="plane"
         size="sm"
       >
@@ -78,7 +78,7 @@ export function FormulaireContact() {
   };
 
   return (
-    <Form action={handleSubmit} className=" flex flex-col gap-6">
+    <Form action={handleSubmit} className="flex flex-col gap-6">
       <div className="w-full flex flex-col md:flex-row gap-6">
         <input
           type="text"
@@ -88,7 +88,7 @@ export function FormulaireContact() {
           value={formData.lastName}
           onChange={handleChange}
           aria-label="Nom"
-          className="w-full h-full p-2 bg-background border border-border text-foreground rounded-md focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-300 ease-in-out"
+          className="w-full h-full p-2 border-b-4 border-b-border text-foreground font-light focus:outline-none focus:border-b-primary-foreground transition-all duration-300 ease-in-out"
           required
         />
 
@@ -100,7 +100,7 @@ export function FormulaireContact() {
           value={formData.firstName}
           onChange={handleChange}
           aria-label="Prénom"
-          className="w-full h-full p-2 bg-background border border-border text-foreground shadow-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-300 ease-in-out"
+          className="w-full h-full p-2 border-b-4 border-b-border text-foreground font-light focus:outline-none focus:border-b-primary-foreground transition-all duration-300 ease-in-out"
           required
         />
       </div>
@@ -113,7 +113,7 @@ export function FormulaireContact() {
         value={formData.email}
         onChange={handleChange}
         aria-label="Email"
-        className="w-full h-full p-2 bg-background border border-border text-foreground shadow-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-300 ease-in-out"
+        className="w-full h-full p-2 border-b-4 border-b-border text-foreground font-light focus:outline-none focus:border-b-primary-foreground transition-all duration-300 ease-in-out"
         required
       />
 
@@ -122,7 +122,7 @@ export function FormulaireContact() {
           name="message"
           id="message"
           placeholder="Votre message..."
-          className="w-full h-full min-h-32 p-2 bg-background border border-border text-foreground shadow-md rounded-lg focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-300 ease-in-out"
+          className="w-full h-full min-h-32 p-2 border-b-4 border-b-border text-foreground font-light focus:outline-none focus:border-b-primary-foreground transition-all duration-300 ease-in-out"
           value={formData.message}
           onChange={handleChange}
           maxLength={500}
