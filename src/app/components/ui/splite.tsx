@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, lazy } from "react";
+import { LoaderBars } from "./Loader";
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
 interface SplineSceneProps {
@@ -12,8 +13,8 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
   return (
     <Suspense
       fallback={
-        <div className="w-full h-full flex items-center justify-center">
-          <span className="loader"></span>
+        <div className="w-1/2 h-full flex items-center justify-center">
+          <LoaderBars size={54} />
         </div>
       }
     >
