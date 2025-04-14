@@ -86,17 +86,17 @@ export function Slider({ cards }: { cards: SliderCard[] }) {
           {cards.map((card, idx) => (
             <div
               key={idx}
-              className="w-full h-full flex items-center justify-center  flex-shrink-0"
+              className="w-full h-full flex justify-center flex-shrink-0"
             >
               <CustomCard theme="slider" onClick={() => toggleImage(idx)}>
                 <div className="font-bold text-4xl text-muted-foreground z-20">
                   0{idx + 1}.
                 </div>
                 <h3 className="text-4xl font-light z-20">{card.name}</h3>
-                <h4 className="sm:w-2/3 text-sm font-light flex flex-1 text-left text-muted-foreground z-20">
+                <h4 className="sm:w-2/3 text-sm font-light flex flex-1 text-left items-center text-muted-foreground z-20">
                   {card.text}
                 </h4>
-                <div className="absolute sm:text-[14rem] text-[10rem] text-stroke bottom-0 left-16 w-full z-10">
+                <div className="absolute sm:text-[14rem] text-[10rem] text-stroke bottom-0 left-16 w-full z-10 whitespace-nowrap">
                   {card.name}
                 </div>
 
@@ -119,37 +119,51 @@ export function Slider({ cards }: { cards: SliderCard[] }) {
                   quality={90}
                 />
 
-                <div className="w-full flex place-content-end gap-4 z-50">
-                  {card.liens.map((lien, idx) => {
-                    if (lien.target) {
-                      return (
-                        <div key={idx} className={`relative z-20 group`}>
-                          <CustomBtn
-                            href={lien.href}
-                            theme="round"
-                            size="xl"
-                            className={clsx(
-                              "relative z-50 group-hover:bg-primary transition-colors duration-300",
-                              visibleBtn ? "bg-primary" : "bg-primary/20"
-                            )}
-                            target={lien.target}
-                            iconName={lien.iconName as IconName}
-                            ariaLabel={`Aller sur ${lien.title}`}
-                          >
-                            {/* <span className="md:text-[1.25rem] text-[1rem]">
+                <div className="w-full flex md:justify-between max-md:flex-col gap-4 z-20">
+                  {card.skills && card.skills.length > 0 && (
+                    <div className="flex flex-wrap items-start gap-2 text-sm font-light">
+                      {card.skills.map((skill, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <span className="text-primary">{skill}</span>
+                          {card.skills && idx !== card.skills.length - 1 && (
+                            <span className="text-muted-foreground">/</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <div className="flex place-content-end gap-4 z-50">
+                    {card.liens.map((lien, idx) => {
+                      if (lien.target) {
+                        return (
+                          <div key={idx} className={`relative z-20 group`}>
+                            <CustomBtn
+                              href={lien.href}
+                              theme="round"
+                              size="xl"
+                              className={clsx(
+                                "relative z-50 group-hover:bg-primary transition-colors duration-300",
+                                visibleBtn ? "bg-primary" : "bg-primary/20"
+                              )}
+                              target={lien.target}
+                              iconName={lien.iconName as IconName}
+                              ariaLabel={`Aller sur ${lien.title}`}
+                            >
+                              {/* <span className="md:text-[1.25rem] text-[1rem]">
                           {lien.title}
                         </span> */}
-                            <span className="sr-only">{lien.title}</span>
-                          </CustomBtn>
-                          <ToolTip
-                            txt={lien.title}
-                            color="primary"
-                            isVisible={visibleBtn}
-                          />
-                        </div>
-                      );
-                    }
-                  })}
+                              <span className="sr-only">{lien.title}</span>
+                            </CustomBtn>
+                            <ToolTip
+                              txt={lien.title}
+                              color="primary"
+                              isVisible={visibleBtn}
+                            />
+                          </div>
+                        );
+                      }
+                    })}
+                  </div>
                 </div>
               </CustomCard>
             </div>

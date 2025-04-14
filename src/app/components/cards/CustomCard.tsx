@@ -44,7 +44,7 @@ const THEME_STYLES = {
   none: "border-none shadow-none bg-transparent",
   icon: "bg-background border-1 border-border w-fit p-2 rounded-2xl",
   slider:
-    "relative z-20 mx-4 group flex-col items-start justify-start w-full h-full min-w-[200px] min-h-[400px] max-w-[800px] max-h-[800px] p-8 gap-8 border-2 border-border rounded-md rounded-bl-4xl  bg-linear-to-tl from-primary/20 via-background/20 to-background/20 overflow-hidden",
+    "relative z-20 mx-4 group items-start justify-start w-full h-full min-w-[200px] min-h-[400px] max-w-[800px] max-h-[800px] p-8 gap-8 border-2 border-border rounded-md rounded-bl-4xl  bg-linear-to-tl from-primary/20 via-background/20 to-background/20 overflow-hidden",
 };
 
 const SIZE_CLASSES = {

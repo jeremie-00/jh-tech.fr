@@ -70,6 +70,14 @@
         "url": "/logos-ecoles/Logo_OpenClassrooms.png",
         "alt": "Logo openclassroom",
         "text": "\" Cette formation **Openclassroom** enseigne les compétences essentielles pour concevoir et développer des applications **web modernes**. Elle couvre l’utilisation des technologies **JavaScript**, **React.js**, **Node.js**, tout en intégrant la réalisation de projets pratiques. Une approche **agile** est adoptée pour favoriser la gestion efficace des développements. \""
+      },
+      {
+        "date": "2023 - 2024",
+        "formation": "Initiation à la programmation via Raspberry Pi",
+        "organisme": "Formation autodidacte",
+        "url": "/logos-ecoles/Raspberry_Pi_Logo.svg",
+        "alt": "Logo raspberry pi",
+        "text": "\" Exploration de la programmation embarquée avec **Raspberry Pi** : écriture de scripts en **Python**, manipulation de capteurs, contrôle de composants électroniques (LED, relais, modules RFID, etc.), mise en place de **systèmes d’automatisation** simples et interaction avec le **GPIO**. \""
       }
     ]
   },
@@ -132,12 +140,12 @@
       {
         "url": "/skills/html-5.svg",
         "alt": "Logo html5",
-        "name": "html5"
+        "name": "HTML5"
       },
       {
         "url": "/skills/css-3.svg",
         "alt": "Logo css3",
-        "name": "css3"
+        "name": "Css3"
       },
       {
         "url": "/skills/tailwind.svg",
@@ -233,6 +241,52 @@
     "text": "Explorez mes projets et plongez dans mes créations uniques.",
     "cards": [
       {
+        "name": "Portfolio",
+        "text": "Application web de portfolio personnel développée avec Next.js, TypeScript pour un typage strict, TailwindCSS pour une conception responsive, et Framer Motion pour des animations interactives. Projet versionné avec Git/GitHub et déployé sur Vercel",
+        "url": "/projet/portfolio/cover.webp",
+        "url_mobile": "/projet/portfolio/cover-mobile.webp",
+        "alt": "Image portfolio",
+        "liens": [
+          {
+            "title": "Github",
+            "href": "https://github.com/jeremie-00/jh-tech.fr.git",
+            "iconName": "github",
+            "target": true
+          },
+
+          {
+            "title": "Visiter",
+            "href": "",
+            "iconName": "globe",
+            "target": false
+          }
+        ],
+        "skills": ["Next.js", "TypeScript", "TailwindCSS"]
+      },
+      {
+        "name": "Pico W",
+        "text": "Système de surveillance de portes embarqué sur Raspberry Pi Pico W, avec serveur HTTP léger sécurisé (Microdot) permettant de consulter l’état des capteurs à distance via une interface web.",
+        "url": "/projet/pico-w/cover.png",
+        "url_mobile": "/projet/pico-w/cover-mobile.png",
+        "alt": "Image du site raspidefbox",
+        "liens": [
+          {
+            "title": "Github",
+            "href": "https://github.com/jeremie-00/Pico-alarme.git",
+            "iconName": "github",
+            "target": true
+          },
+
+          {
+            "title": "Visiter",
+            "href": "",
+            "iconName": "globe",
+            "target": false
+          }
+        ],
+        "skills": ["Python", "JavaScript", "HTML", "Css"]
+      },
+      {
         "name": "Kasa",
         "text": "Créer le front-end d'une application de location immobilière avec Vite, React, et React Router, en respectant les maquettes fournies et en exploitant des données simulées.",
         "url": "/projet/kasa/cover.webp",
@@ -254,29 +308,6 @@
           }
         ],
         "skills": ["React", "JavaScript", "Sass", "Vite", "Node.js", "Figma"]
-      },
-      {
-        "name": "Portfolio",
-        "text": "Une application web pour portfolio personnel.",
-        "url": "/projet/portfolio/cover.webp",
-        "url_mobile": "/projet/portfolio/cover-mobile.webp",
-        "alt": "Image portfolio",
-        "liens": [
-          {
-            "title": "Github",
-            "href": "https://github.com/jeremie-00/jh-tech.fr.git",
-            "iconName": "github",
-            "target": true
-          },
-
-          {
-            "title": "Visiter",
-            "href": "",
-            "iconName": "globe",
-            "target": false
-          }
-        ],
-        "skills": ["Next.js", "TypeScript", "TailwindCSS"]
       },
 
       {
@@ -300,7 +331,7 @@
             "target": true
           }
         ],
-        "skills": ["html", "css", "Sass", "Figma"]
+        "skills": ["HTML", "Css", "Sass", "Figma"]
       },
       {
         "name": "Booki",
@@ -323,7 +354,7 @@
             "target": true
           }
         ],
-        "skills": ["html", "css", "Figma"]
+        "skills": ["HTML", "Css", "Figma"]
       }
     ]
   }
