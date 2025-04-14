@@ -1,4 +1,5 @@
 import Image from "next/image";
+import datas from "../../datas.json";
 import { FormulaireContact } from "../FormulaireContact";
 
 export default function Contact() {
@@ -21,13 +22,11 @@ export default function Contact() {
         <div className="flex flex-col gap-12 ">
           <div className="flex flex-col gap-4">
             <h2 className="min-md:text-xl text-lg font-normal text-foreground tracking-[0.5em] uppercase">
-              Contactez moi
+              {datas.contact.title}
             </h2>
 
             <p className="text-lg italic font-extralight text-muted-foreground">
-              Une idée, un projet, une question ? Curieux et toujours en quête
-              de nouveaux défis, je serais ravi d’échanger avec vous. Parlons-en
-              !
+              {datas.contact.text}
             </p>
           </div>
 

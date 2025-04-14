@@ -49,7 +49,7 @@
   "about": {
     "title": "A propos",
     "subtitle": "**Parlons de moi**",
-    "text": "\" Hey, moi c’est Jérémie – 38 ans, ancien électrotechnicien spécialisé dans l’installation de systèmes électroniques de sécurité, reconverti en développeur web. J’ai troqué les câbles et systèmes de sécurité pour des lignes de code et des interfaces dynamiques. Curieux, rigoureux et toujours en quête d'apprentissage, je mets mes compétences techniques au service de solutions web intuitives, adaptées aux besoins des utilisateurs. \"",
+    "text": "\" Salut, moi c’est Jérémie – 38 ans, ancien électrotechnicien spécialisé dans l’installation de systèmes électroniques de sécurité, reconverti en développeur web. J’ai troqué les câbles et systèmes de sécurité pour des lignes de code et des interfaces dynamiques. Curieux, rigoureux et toujours en quête d'apprentissage, je mets mes compétences techniques au service de solutions web intuitives, adaptées aux besoins des utilisateurs. \"",
     "old": " Je suis passionné par la création d'interfaces modernes et performantes. "
   },
   "educations": {
@@ -77,7 +77,7 @@
         "organisme": "Formation autodidacte",
         "url": "/logos-ecoles/Raspberry_Pi_Logo.svg",
         "alt": "Logo raspberry pi",
-        "text": "\" Exploration de la programmation embarquée avec **Raspberry Pi** : écriture de scripts en **Python**, manipulation de capteurs, contrôle de composants électroniques (LED, relais, modules RFID, etc.), mise en place de **systèmes d’automatisation** simples et interaction avec le **GPIO**. \""
+        "text": "\" Exploration de la programmation embarquée avec **Raspberry Pi** : écriture de scripts en **Python**, manipulation de capteurs, contrôle de composants électroniques (LED, relais, modules RFID, etc.), mise en place de **systèmes d’automatisation** simples et interaction avec le **GPIO**, et gestion de **serveurs embarqués** légers pour l’accès distant aux données. \""
       }
     ]
   },
@@ -357,5 +357,9 @@
         "skills": ["HTML", "Css", "Figma"]
       }
     ]
+  },
+  "contact": {
+    "title": "Contactez moi",
+    "text": "\" Une idée, un projet, une opportunité professionnelle ? Curieux et toujours en quête de nouveaux défis, je serais ravi d’échanger avec vous. Parlons-en ! \""
   }
 }
