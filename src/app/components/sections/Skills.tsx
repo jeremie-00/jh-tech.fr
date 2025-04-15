@@ -1,5 +1,6 @@
 import { useIsMobile } from "@/app/hook/useMobile";
 import { cn } from "@/app/lib/utils";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -7,6 +8,7 @@ import datas from "../../datas.json";
 import { CustomCard } from "../cards/CustomCard";
 import { ContainerSection, ContentFlexCol, Wrapper } from "../Container";
 import { AnimatedGridPattern } from "../ui/animated-grid-pattern";
+import FadeInSection from "../ui/FadeInSection";
 import { LightBg } from "../ui/LightBg";
 import { SeparatorCards } from "../ui/Separator";
 import ToolTip from "../ui/ToolTip";
@@ -67,89 +69,112 @@ export default function Skills() {
       {/* <Wrapper> */}
 
       <ContentFlexCol>
-        <div className="bg-background pt-24 w-full relative z-10">
+        <div className="pt-24 w-full relative z-10">
           <Wrapper>
-            <div className="w-full h-full flex flex-col text-center max-md:text-left px-4 items-center gap-8">
-              {/*  <h2 className="min-md:text-xl text-lg font-normal tracking-[0.5em] uppercase">
+            <FadeInSection direction="up">
+              <div className="w-full h-full flex flex-col text-center max-md:text-left px-4 items-center gap-8">
+                {/*  <h2 className="min-md:text-xl text-lg font-normal tracking-[0.5em] uppercase">
               {datas.competences.title}
             </h2> */}
 
-              <div className="max-md:max-w-[25rem] min-md:text-3xl text-2xl tracking-widest">
-                <ReactMarkdown
-                  components={{
-                    strong: ({ children }) => (
-                      <strong className="text-primary tracking-widest">
-                        {children}
-                      </strong>
-                    ),
-                  }}
-                  remarkPlugins={[remarkGfm]}
-                >
-                  {datas.competences.subtitle}
-                </ReactMarkdown>
-              </div>
-              <div className="max-md:max-w-[25rem] w-full sm:w-2/3 text-md sm:text-lg text-muted-foreground font-extralight">
-                {datas.competences.text}
-              </div>
-
-              <div className="h-full w-full grid min-lg:grid-cols-3 min-md:grid-cols-2 grid-cols-1 gap-x-4">
-                {datas.competences.cards.map((service, idx) => (
-                  <CardService key={idx} service={service} />
-                ))}
-              </div>
-            </div>
-          </Wrapper>
-        </div>
-        <Wrapper>
-          <div className="relative flex w-full h-full">
-            {!isMobile && <LightBg />}
-            <div className="relative z-20 flex items-center bg-background place-self-left max-lg:flex-col max-lg:items-center gap-12 py-12 xl:px-10 rounded-md">
-              <AnimatedGridPattern
-                width={70}
-                height={50}
-                numSquares={20}
-                maxOpacity={0.1}
-                duration={1}
-                repeatDelay={1}
-                className={cn(
-                  "[mask-image:radial-gradient(16em_circle_at_center,white,transparent)]",
-                  "inset-x-0 inset-y-[0%] skew-y-10 z-10"
-                )}
-              />
-              <div className="w-full h-full flex flex-1 flex-wrap items-center justify-center gap-4 max-lg:order-2">
-                {datas.stacks.cards.map((skill, idx) => (
-                  <span key={idx} className={`relative z-20 group`}>
-                    <CustomCard className="relative z-20" theme="icon">
-                      <Image
-                        src={skill.url}
-                        alt={skill.alt}
-                        width={50}
-                        height={50}
-                        quality={90}
-                      />
-                    </CustomCard>
-                    <ToolTip txt={skill.name} color="foreground" />
-                  </span>
-                ))}
-              </div>
-
-              <div className="w-full h-full flex flex-1 items-center justify-center">
-                <div className="min-md:text-5xl text-4xl tracking-wider text-center leading-[1.25em] px-2">
+                <div className="max-md:max-w-[25rem] min-md:text-3xl text-2xl tracking-widest">
                   <ReactMarkdown
                     components={{
                       strong: ({ children }) => (
-                        <strong className="text-primary font-normal">
+                        <strong className="text-primary tracking-widest">
                           {children}
                         </strong>
                       ),
                     }}
                     remarkPlugins={[remarkGfm]}
                   >
-                    {datas.stacks.title}
+                    {datas.competences.subtitle}
                   </ReactMarkdown>
                 </div>
+                <div className="max-md:max-w-[25rem] w-full sm:w-2/3 text-md sm:text-lg text-muted-foreground font-extralight">
+                  {datas.competences.text}
+                </div>
+
+                <div className="h-full w-full grid min-lg:grid-cols-3 min-md:grid-cols-2 grid-cols-1 gap-x-4">
+                  {datas.competences.cards.map((service, idx) => (
+                    <FadeInSection key={idx}>
+                      <CardService service={service} />
+                    </FadeInSection>
+                  ))}
+                </div>
               </div>
-            </div>
+            </FadeInSection>
+          </Wrapper>
+        </div>
+
+        <Wrapper>
+          <div className="relative flex w-full h-full">
+            {!isMobile && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                viewport={{ once: true }}
+                whileInView={{
+                  opacity: [0, 0.8, 0.4, 0.9, 0.2, 0.8, 1],
+                }}
+                transition={{
+                  duration: 0.4,
+                  repeat: 0,
+                  delay: 0.8,
+                  ease: "easeInOut",
+                }}
+              >
+                <LightBg />
+              </motion.div>
+            )}
+            <FadeInSection className="relative z-40" delay={0.2}>
+              <div className="relative z-20 flex items-center bg-background place-self-left max-lg:flex-col max-lg:items-center gap-12 py-12 xl:px-10 rounded-md">
+                <AnimatedGridPattern
+                  width={70}
+                  height={50}
+                  numSquares={20}
+                  maxOpacity={0.1}
+                  duration={1}
+                  repeatDelay={1}
+                  className={cn(
+                    "[mask-image:radial-gradient(16em_circle_at_center,white,transparent)]",
+                    "inset-x-0 inset-y-[0%] skew-y-10 z-10"
+                  )}
+                />
+                <div className="w-full h-full flex flex-1 flex-wrap items-center justify-center gap-4 max-lg:order-2">
+                  {datas.stacks.cards.map((skill, idx) => (
+                    <span key={idx} className={`relative z-20 group`}>
+                      <CustomCard className="relative z-20" theme="icon">
+                        <Image
+                          src={skill.url}
+                          alt={skill.alt}
+                          width={50}
+                          height={50}
+                          quality={90}
+                        />
+                      </CustomCard>
+                      <ToolTip txt={skill.name} color="foreground" />
+                    </span>
+                  ))}
+                </div>
+
+                <div className="w-full h-full flex flex-1 items-center justify-center">
+                  <div className="min-md:text-5xl text-4xl tracking-wider text-center leading-[1.25em] px-2">
+                    <ReactMarkdown
+                      components={{
+                        strong: ({ children }) => (
+                          <strong className="text-primary font-normal">
+                            {children}
+                          </strong>
+                        ),
+                      }}
+                      remarkPlugins={[remarkGfm]}
+                    >
+                      {datas.stacks.title}
+                    </ReactMarkdown>
+                  </div>
+                </div>
+              </div>
+            </FadeInSection>
           </div>
         </Wrapper>
       </ContentFlexCol>

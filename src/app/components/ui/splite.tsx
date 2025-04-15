@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, lazy } from "react";
+import FadeInSection from "./FadeInSection";
 import { LoaderBars } from "./Loader";
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
@@ -18,7 +19,13 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
         </div>
       }
     >
-      <Spline scene={scene} className={className} />
+      <FadeInSection
+        delay={1.5}
+        direction="up"
+        className="w-full h-full flex-1"
+      >
+        <Spline scene={scene} className={className} />
+      </FadeInSection>
     </Suspense>
   );
 }

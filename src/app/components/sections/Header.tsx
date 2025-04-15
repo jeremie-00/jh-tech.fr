@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import datas from "../../datas.json";
 import { CustomBtn } from "../buttons/custom-buttons";
+import FadeInSection from "../ui/FadeInSection";
 
 interface NavBarreProps {
   links: { title: string; href: string }[];
@@ -71,6 +72,7 @@ function NavMobile({ links, hash, handleClick }: NavBarreProps) {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+            layout
             ref={menuRef}
             className="absolute top-0 z-10 right-0 w-[280px] border-l-2 border-border rounded-lg"
             initial={{ opacity: 0, x: "100%" }}
@@ -204,31 +206,51 @@ export default function Header({
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full flex items-center justify-between md:px-8 md:py-3 p-4 bg-background/60 backdrop-blur-sm transition-transform duration-300`}
+      className={`sticky top-0 z-50 md:px-8 md:py-3 p-4 bg-background/60 backdrop-blur-sm transition-transform duration-300`}
     >
-      <CustomBtn
-        href="#home"
-        theme="default"
-        onClick={() => handleClick("#home")}
-      >
-        <span
-          className={`w-fit h-fit flex items-center gap-2 text-xl font-bold tracking-wider transition-all duration-300 ease-in-out ${
-            hash === "#home" ? "text-primary" : ""
-          }`}
+      <div className="w-full flex items-center justify-between">
+        <CustomBtn
+          href="#home"
+          theme="default"
+          onClick={() => handleClick("#home")}
         >
-          <div
-            className={`w-3 h-3 rounded-full self-center translate-y-[0.125rem] ${
-              hash === "#home" ? "bg-foreground" : "bg-primary"
+          <span
+            className={`w-fit h-fit flex items-center gap-2 text-xl font-bold tracking-wider transition-all duration-300 ease-in-out ${
+              hash === "#home" ? "text-primary" : ""
             }`}
-          />
-          {datas.home.title}
-        </span>
-      </CustomBtn>
-      {isMobile ? (
-        <NavMobile links={datas.links} hash={hash} handleClick={handleClick} />
-      ) : (
-        <NavBarre links={datas.links} hash={hash} handleClick={handleClick} />
-      )}
+          >
+            <FadeInSection direction="left">
+              <div
+                className={`w-3 h-3 rounded-full self-center translate-y-[0.125rem] ${
+                  hash === "#home" ? "bg-foreground" : "bg-primary"
+                }`}
+              />
+            </FadeInSection>
+            {datas.home.title.split("").map((letter, idx) => (
+              <FadeInSection key={idx} delay={idx * 0.1} direction="left">
+                <span key={idx} className="tracking-[-0.4rem] font-light">
+                  {letter}
+                </span>
+              </FadeInSection>
+            ))}
+          </span>
+        </CustomBtn>
+        <FadeInSection direction="down">
+          {isMobile ? (
+            <NavMobile
+              links={datas.links}
+              hash={hash}
+              handleClick={handleClick}
+            />
+          ) : (
+            <NavBarre
+              links={datas.links}
+              hash={hash}
+              handleClick={handleClick}
+            />
+          )}
+        </FadeInSection>
+      </div>
     </header>
   );
 }

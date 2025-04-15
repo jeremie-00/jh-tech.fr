@@ -14,9 +14,9 @@ export default function Hero() {
         id="home"
         className="w-full h-screen flex max-lg:flex-col items-center justify-center max-lg:pt-16"
       >
-        <div className="lg:w-1/2 flex gap-12 flex-col items-center justify-center lg:items-start">
-          <div className="flex flex-col max-lg:items-center gap-3">
-            <h2 className="text-primary min-md:text-6xl text-5xl tracking-wider text-center lg:text-left">
+        <div className="w-fit flex flex-1 gap-12 flex-col items-center justify-center lg:items-start">
+          <div className="w-fit flex flex-col max-lg:items-center gap-3">
+            <h2 className="w-fit text-primary min-md:text-6xl text-5xl tracking-wider text-center lg:text-left">
               {datas.home.subtitle}
             </h2>
 
