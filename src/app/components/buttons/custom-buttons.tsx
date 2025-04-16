@@ -38,7 +38,7 @@ export type IconName =
 export type ThemeName =
   | "default"
   | "primary"
-  | "highlight"
+  | "underline"
   | "hoverPrimary"
   | "outline"
   | "round"
@@ -88,7 +88,8 @@ const THEME_STYLES = {
   default: "flex gap-2",
   primary:
     "flex items-center gap-2 bg-primary text-accent hover:bg-primary/80 px-4 py-2 rounded-md shadow",
-  highlight: "flex items-center gap-2 rounded-md hover:bg-primary-foreground",
+  underline:
+    "flex items-center after:content-[''] after:bg-primary after:transition-scale after:duration-300 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:rounded-full after:origin-center after:scale-0 hover:after:scale-100",
   hoverPrimary: "text-foreground hover:text-primary",
   outline:
     "flex gap-2 rounded-md p-2 bg-none border border-border hover:border-primary/80 hover:text-primary",

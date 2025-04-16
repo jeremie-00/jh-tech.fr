@@ -15,14 +15,14 @@ interface NavBarreProps {
 function NavBarre({ links, hash, handleClick }: NavBarreProps) {
   return (
     <nav>
-      <ul className="flex items-center justify-center gap-1 px-8 py-2 max-md:hidden">
+      <ul className="flex items-center justify-center gap-8 px-8 py-2 max-md:hidden">
         {links.map((link) => (
           <li key={link.title} className="relative">
             <CustomBtn
               href={link.href}
-              theme="highlight"
+              theme="underline"
               ariaLabel={`Aller à la section ${link.title}`}
-              className={`px-5 py-1 ${hash === link.href ? "bg-card" : ""}`}
+              className={`${hash === link.href ? "after:scale-100" : ""}`}
               onClick={() => handleClick(link.href)}
             >
               {link.title}
