@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { domAnimation, LazyMotion, m, Variants } from "framer-motion";
 import { ReactNode } from "react";
 
 type FadeInSectionProps = {
@@ -28,10 +28,7 @@ const getVariants = (direction: FadeInSectionProps["direction"]): Variants => {
     case "right":
       x = -100;
       break;
-    case "default":
     default:
-      x = 0;
-      y = 0;
       break;
   }
 
@@ -62,15 +59,18 @@ export default function FadeInSection({
   direction = "up",
 }: FadeInSectionProps) {
   return (
-    <motion.div
-      className={className}
-      custom={delay}
-      variants={getVariants(direction)}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: amount }}
-    >
-      {children}
-    </motion.div>
+    <LazyMotion features={domAnimation}>
+      <m.div
+        layout
+        className={className}
+        custom={delay}
+        variants={getVariants(direction)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount }}
+      >
+        {children}
+      </m.div>
+    </LazyMotion>
   );
 }
