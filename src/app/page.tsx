@@ -42,7 +42,7 @@ export default function Home() {
       <FadeInSection direction="default">
         <About />
       </FadeInSection>
-      <ScrollText text="services" />
+      <ScrollText text="Compétences" />
       <Skills />
       <ScrollText text="projets" />
       <Works />
