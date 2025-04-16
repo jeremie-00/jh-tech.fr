@@ -60,11 +60,17 @@ export default function About() {
               <div className="w-full h-full flex flex-col flex-1">
                 {datas.educations.text.map((educ, idx) => (
                   <FadeInSection key={idx} delay={0} direction="up">
-                    <div className="flex border-b-4 border-border ">
+                    <div
+                      className={`flex ${
+                        isActive === idx
+                          ? "border-b-4 border-primary/50"
+                          : "border-b-4 border-border"
+                      }  `}
+                    >
                       <CustomBtn
                         theme="default"
                         className={` ${
-                          isActive === idx ? "bg-foreground/3" : ""
+                          isActive === idx ? "bg-border" : ""
                         } flex-1 sm:gap-8 gap-3 px-4 lg:py-8 py-4 rounded-none`}
                         onClick={() => handleClick(educ.text, idx)}
                       >
