@@ -82,19 +82,21 @@ export default function About() {
                           className=""
                           quality={90}
                         />
-                        <div className="w-full h-full flex flex-1 flex-col gap-2 ">
-                          <h3 className="w-full lg:text-lg text-sm text-left">
-                            {educ.organisme}
-                          </h3>
+                        <div className="flex flex-1 max-md:flex-col gap-2">
+                          <div className="w-full h-full flex flex-1 flex-col gap-2 ">
+                            <h3 className="w-full lg:text-lg text-sm text-left">
+                              {educ.organisme}
+                            </h3>
 
-                          <h3 className="w-full lg:text-md text-sm text-left text-muted-foreground">
-                            {educ.formation}
+                            <h3 className="w-full lg:text-md text-sm text-left text-muted-foreground">
+                              {educ.formation}
+                            </h3>
+                          </div>
+
+                          <h3 className="lg:text-md text-sm text-muted-foreground md:place-self-end place-self-start">
+                            {educ.date}
                           </h3>
                         </div>
-
-                        <h3 className="lg:text-md text-sm text-muted-foreground place-self-end">
-                          {educ.date}
-                        </h3>
                       </CustomBtn>
                     </div>
                   </FadeInSection>
