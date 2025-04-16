@@ -22,7 +22,7 @@ export default function About() {
   return (
     <ContainerSection id="about">
       <ContentFlexCol>
-        <div className="background-about">
+        <div className="background-about relative z-20">
           <FadeInSection
             direction="up"
             className="flex flex-col md:items-center items-start justify-start md:text-center text-left gap-8 pt-14"

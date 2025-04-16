@@ -22,7 +22,7 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
       <FadeInSection
         delay={1.5}
         direction="up"
-        className="w-full h-full flex-1 overflow-visible"
+        className="w-full h-full flex-1 relative z-10"
       >
         <Spline scene={scene} className={className} />
       </FadeInSection>
