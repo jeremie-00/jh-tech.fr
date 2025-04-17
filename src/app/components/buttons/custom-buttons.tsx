@@ -14,6 +14,7 @@ import {
   IoMenuOutline,
   IoTrash,
 } from "react-icons/io5";
+import { LuBrainCircuit } from "react-icons/lu";
 import {
   MdMailOutline,
   MdOutlineDisabledByDefault,
@@ -33,7 +34,8 @@ export type IconName =
   | "close"
   | "delete"
   | "validate"
-  | "add";
+  | "add"
+  | "competences";
 
 export type ThemeName =
   | "default"
@@ -82,6 +84,7 @@ const ICON_MAP = {
   delete: IoTrash,
   validate: FaCheck,
   add: IoAddSharp,
+  competences: LuBrainCircuit,
 };
 
 const THEME_STYLES = {

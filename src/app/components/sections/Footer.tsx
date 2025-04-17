@@ -7,7 +7,7 @@ export default function Footer({
   handleClick: (href: string) => void;
 }) {
   return (
-    <footer className="relative w-full h-full z-50 font-light text-[0.75rem] text-muted-foreground bg-secondary border-t border-muted-foreground">
+    <footer className="relative w-full h-full z-40 font-light text-[0.75rem] text-muted-foreground bg-secondary border-t border-muted-foreground">
       <div className="flex flex-col pb-2 md:px-12 px-4 pt-12 gap-4">
         <div className="flex items-center justify-between">
           <div className="block space-y-1">

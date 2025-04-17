@@ -3,11 +3,11 @@ import { useIsMobile } from "@/app/hook/useMobile";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import datas from "../../datas.json";
-import { CustomBtn } from "../buttons/custom-buttons";
+import { CustomBtn, IconName } from "../buttons/custom-buttons";
 import FadeInSection from "../ui/FadeInSection";
 
 interface NavBarreProps {
-  links: { title: string; href: string }[];
+  links: { title: string; href: string; iconName: string }[];
   hash: string;
   handleClick: (href: string) => void;
 }
@@ -88,13 +88,14 @@ function NavMobile({ links, hash, handleClick }: NavBarreProps) {
             }}
           >
             <div className="bg-background border border-border/20 border-r-0 rounded-l-lg p-4 flex flex-col items-start justify-start gap-16 h-screen">
-              <div className="w-full flex items-center justify-between">
+              <div className="w-full flex items-center justify-end">
                 <CustomBtn
                   onClick={toggleMenu}
                   theme="default"
                   ariaLabel="Fermer le menu"
                   iconName="close"
                   size="xl"
+                  className="justify-end"
                 >
                   <span className="sr-only">Fermer le menu</span>
                 </CustomBtn>
@@ -107,9 +108,12 @@ function NavMobile({ links, hash, handleClick }: NavBarreProps) {
                         <CustomBtn
                           href={link.href}
                           theme="hoverPrimary"
-                          className={hash === link.href ? "text-primary" : ""}
+                          className={`${
+                            hash === link.href ? "text-primary" : ""
+                          }  flex gap-2`}
                           ariaLabel={`Aller à la section ${link.title}`}
                           onClick={() => handleClickandToggleMenu(link.href)}
+                          iconName={link.iconName as IconName}
                         >
                           {link.title}
                         </CustomBtn>

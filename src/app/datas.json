@@ -2,19 +2,23 @@
   "links": [
     {
       "title": "A propos",
-      "href": "#about"
+      "href": "#about",
+      "iconName": "about"
     },
     {
       "title": "Compétences",
-      "href": "#competences"
+      "href": "#competences",
+      "iconName": "competences"
     },
     {
       "title": "Projets",
-      "href": "#projets"
+      "href": "#projets",
+      "iconName": "work"
     },
     {
       "title": "Contact",
-      "href": "#contact"
+      "href": "#contact",
+      "iconName": "mail"
     }
   ],
 
