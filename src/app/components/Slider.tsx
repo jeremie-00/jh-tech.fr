@@ -101,11 +101,7 @@ export function Slider({ cards }: { cards: SliderCard[] }) {
                 </div>
 
                 <Image
-                  src={
-                    isMobile
-                      ? card.url_mobile || "/projet/kasa/cover-mobile.png"
-                      : card.url
-                  }
+                  src={isMobile ? card.url_mobile : card.url}
                   alt={card.alt}
                   width={850}
                   height={550}
@@ -119,9 +115,9 @@ export function Slider({ cards }: { cards: SliderCard[] }) {
                   quality={90}
                 />
 
-                <div className="w-full flex md:justify-between max-md:flex-col gap-4 z-20">
+                <div className="w-full flex md:justify-between max-md:flex-col gap-4">
                   {card.skills && card.skills.length > 0 && (
-                    <div className="flex flex-wrap items-start gap-2 text-sm font-light">
+                    <div className="flex flex-wrap items-start gap-2 text-sm font-light z-20">
                       {card.skills.map((skill, idx) => (
                         <div key={idx} className="flex items-center gap-2">
                           <span className="text-primary">{skill}</span>
@@ -132,11 +128,11 @@ export function Slider({ cards }: { cards: SliderCard[] }) {
                       ))}
                     </div>
                   )}
-                  <div className="flex place-content-end gap-4 z-50">
+                  <div className="flex place-content-end gap-4 z-40">
                     {card.liens.map((lien, idx) => {
                       if (lien.target) {
                         return (
-                          <div key={idx} className={`relative z-20 group`}>
+                          <div key={idx} className={`relative z-40 group`}>
                             <CustomBtn
                               href={lien.href}
                               theme="round"

@@ -98,7 +98,7 @@ const THEME_STYLES = {
     "flex gap-2 rounded-md p-2 bg-none border border-border hover:border-primary/80 hover:text-primary",
   form: "flex gap-2 w-full bg-card p-2 text-foreground hover:bg-primary-foreground/80 z-20",
   round:
-    "rounded-full p-2 bg-foreground/10 text-foreground/80 hover:bg-primary-foreground/80 z-20",
+    "rounded-full p-2 bg-foreground/10 text-foreground/80 hover:bg-primary-foreground/80",
   footer: "text-foreground/60 hover:text-primary",
 };
 
