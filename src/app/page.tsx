@@ -39,9 +39,7 @@ export default function Home() {
         <ScrollDown />
         <Hero />
       </FadeInSection>
-      <FadeInSection direction="default">
-        <About />
-      </FadeInSection>
+      <About />
       <ScrollText text="Compétences" />
       <Skills />
       <ScrollText text="projets" />
