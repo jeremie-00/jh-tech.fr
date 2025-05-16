@@ -58,49 +58,51 @@ export default function About() {
                 </h2>
               </FadeInSection>
               <div className="w-full h-full flex flex-col flex-1">
-                {datas.educations.text.map((educ, idx) => (
-                  <FadeInSection key={idx} delay={0} direction="up">
-                    <div
-                      className={`flex ${
-                        isActive === idx
-                          ? "border-b-4 border-primary/50"
-                          : "border-b-4 border-border"
-                      }  `}
-                    >
-                      <CustomBtn
-                        theme="default"
-                        className={` ${
-                          isActive === idx ? "bg-border" : ""
-                        } flex-1 sm:gap-8 gap-3 px-4 lg:py-8 py-4 rounded-none`}
-                        onClick={() => handleClick(educ.text, idx)}
+                {datas.educations.text
+                  .filter((educ) => educ.isVisible === "true")
+                  .map((educ, idx) => (
+                    <FadeInSection key={idx} delay={0} direction="up">
+                      <div
+                        className={`flex ${
+                          isActive === idx
+                            ? "border-b-4 border-primary/50"
+                            : "border-b-4 border-border"
+                        }  `}
                       >
-                        <Image
-                          src={educ.url}
-                          alt={educ.alt}
-                          width={50}
-                          height={50}
-                          className=""
-                          quality={90}
-                        />
-                        <div className="flex flex-1 max-md:flex-col gap-2">
-                          <div className="w-full h-full flex flex-1 flex-col gap-2 ">
-                            <h3 className="w-full lg:text-lg text-sm text-left">
-                              {educ.organisme}
-                            </h3>
+                        <CustomBtn
+                          theme="default"
+                          className={` ${
+                            isActive === idx ? "bg-border" : ""
+                          } flex-1 sm:gap-8 gap-3 px-4 lg:py-8 py-4 rounded-none`}
+                          onClick={() => handleClick(educ.text, idx)}
+                        >
+                          <Image
+                            src={educ.url}
+                            alt={educ.alt}
+                            width={50}
+                            height={50}
+                            className=""
+                            quality={90}
+                          />
+                          <div className="flex flex-1 max-md:flex-col gap-2">
+                            <div className="w-full h-full flex flex-1 flex-col gap-2 ">
+                              <h3 className="w-full lg:text-lg text-sm text-left">
+                                {educ.organisme}
+                              </h3>
 
-                            <h3 className="w-full lg:text-md text-sm text-left text-muted-foreground">
-                              {educ.formation}
+                              <h3 className="w-full lg:text-md text-sm text-left text-muted-foreground">
+                                {educ.formation}
+                              </h3>
+                            </div>
+
+                            <h3 className="lg:text-md text-sm text-muted-foreground md:place-self-end place-self-start">
+                              {educ.date}
                             </h3>
                           </div>
-
-                          <h3 className="lg:text-md text-sm text-muted-foreground md:place-self-end place-self-start">
-                            {educ.date}
-                          </h3>
-                        </div>
-                      </CustomBtn>
-                    </div>
-                  </FadeInSection>
-                ))}
+                        </CustomBtn>
+                      </div>
+                    </FadeInSection>
+                  ))}
               </div>
               <FadeInSection direction="up">
                 <AnimatePresence mode="wait">

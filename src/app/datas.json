@@ -65,7 +65,8 @@
         "organisme": "Studi",
         "url": "/logos-ecoles/Studi_logo.svg",
         "alt": "Logo studi",
-        "text": "\" Cette formation **Studi** enseigne les compétences essentielles pour développer des applications web complètes, aussi bien côté **front-end** qu'en **back-end**. Elle inclut la création d'interfaces interactives avec **HTML5**, **CSS3**, **Ajax** et **React.js**, la conception de pages dynamiques avec **PHP** et **Symfony**, ainsi que la gestion des bases de données relationnelles en **SQL**. \" "
+        "text": "\" Cette formation **Studi** enseigne les compétences essentielles pour développer des applications web complètes, aussi bien côté **front-end** qu'en **back-end**. Elle inclut la création d'interfaces interactives avec **HTML5**, **CSS3**, **Ajax** et **React.js**, la conception de pages dynamiques avec **PHP** et **Symfony**, ainsi que la gestion des bases de données relationnelles en **SQL**. \" ",
+        "isVisible": "false"
       },
       {
         "date": "2024 - 2025",
@@ -73,7 +74,8 @@
         "organisme": "Openclassroom",
         "url": "/logos-ecoles/Logo_OpenClassrooms.png",
         "alt": "Logo openclassroom",
-        "text": "\" Cette formation **Openclassroom** enseigne les compétences essentielles pour concevoir et développer des applications **web modernes**. Elle couvre l’utilisation des technologies **JavaScript**, **React.js**, **Node.js**, tout en intégrant la réalisation de projets pratiques. Une approche **agile** est adoptée pour favoriser la gestion efficace des développements. \""
+        "text": "\" Cette formation **Openclassroom** enseigne les compétences essentielles pour concevoir et développer des applications **web modernes**. Elle couvre l’utilisation des technologies **JavaScript**, **React.js**, **Node.js**, tout en intégrant la réalisation de projets pratiques. Une approche **agile** est adoptée pour favoriser la gestion efficace des développements. \"",
+        "isVisible": "true"
       },
       {
         "date": "2023 - 2024",
@@ -81,7 +83,8 @@
         "organisme": "Formation autodidacte",
         "url": "/logos-ecoles/Raspberry_Pi_Logo.svg",
         "alt": "Logo raspberry pi",
-        "text": "\" Exploration de la programmation embarquée avec **Raspberry Pi** : écriture de scripts en **Python**, manipulation de capteurs, contrôle de composants électroniques (LED, relais, modules RFID, etc.), mise en place de **systèmes d’automatisation** simples et interaction avec le **GPIO**, et gestion de **serveurs embarqués** légers pour l’accès distant aux données. \""
+        "text": "\" Exploration de la programmation embarquée avec **Raspberry Pi** : écriture de scripts en **Python**, manipulation de capteurs, contrôle de composants électroniques (LED, relais, modules RFID, etc.), mise en place de **systèmes d’automatisation** simples et interaction avec le **GPIO**, et gestion de **serveurs embarqués** légers pour l’accès distant aux données. \"",
+        "isVisible": "true"
       }
     ]
   },
