@@ -5,7 +5,7 @@ import FadeInSection from "../ui/FadeInSection";
 
 export default function Contact() {
   return (
-    <section id="contact" className="w-full h-full bg-secondary ">
+    <section id="contact" className="w-full h-full bg-secondary relative z-30">
       <FadeInSection
         direction="up"
         amount={0.3}

@@ -68,7 +68,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="lg:fixed w-full h-full lg:top-0 lg:left-80 -z-1 flex items-center justify-center">
+        <div className="lg:fixed w-full h-full lg:top-0 lg:left-80 z-10 flex items-center justify-center">
           <SplineScene
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
             className="w-1/2 h-full flex-1"

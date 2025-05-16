@@ -14,7 +14,7 @@ export function ScrollText({ text }: { text: string }) {
   return (
     <div
       ref={ref}
-      className="lg:h-34 h-24 flex items-end justify-end bg-background overflow-hidden border-b-1 border-muted-foreground"
+      className="relative z-30 lg:h-34 h-24 flex items-end justify-end bg-background overflow-hidden border-b-1 border-muted-foreground"
     >
       <motion.div
         style={{ x }}

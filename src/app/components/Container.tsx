@@ -19,7 +19,11 @@ export function ContainerSection({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   return (
-    <section ref={ref} id={id} className="w-full h-full bg-background">
+    <section
+      ref={ref}
+      id={id}
+      className="w-full h-full bg-background relative z-30"
+    >
       {children}
     </section>
   );
