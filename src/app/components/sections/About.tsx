@@ -10,7 +10,7 @@ import FadeInSection from "../ui/FadeInSection";
 
 export default function About() {
   const [educationsText, setEducationsText] = useState(
-    datas.educations.text[0].text
+    datas.educations.text[1].text
   );
 
   const [isActive, setIsActive] = useState(0);
