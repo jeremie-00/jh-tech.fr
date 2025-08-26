@@ -11,5 +11,7 @@ Disallow: /*?*
 Allow: /_next/static/
 Allow: /static/*.css
 Allow: /static/*.js
+Allow: /api/sitemap
 
-Sitemap: https://jh-tech.fr/api/sitemap.xml
+Sitemap: https://jh-tech.fr/api/sitemap
+
