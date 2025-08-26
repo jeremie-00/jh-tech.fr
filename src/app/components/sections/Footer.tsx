@@ -20,7 +20,7 @@ export default function Footer({
             >
               <span className="flex items-center gap-2 tracking-wider">
                 <div className="w-2 h-2 rounded-full bg-primary self-center" />
-                Jérémie Hérault
+                Portfolio JH-Tech – Jérémie Hérault
               </span>
             </CustomBtn>
 
