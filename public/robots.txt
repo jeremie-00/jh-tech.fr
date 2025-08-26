@@ -1,5 +1,15 @@
 User-agent: *
+
 Disallow: /pages/legal
 Disallow: /CV-Jérémie-Hérault.pdf
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /private/
+Disallow: /*?* 
+
+Allow: /_next/static/
+Allow: /static/*.css
+Allow: /static/*.js
 
 Sitemap: https://jh-tech.fr/api/sitemap.xml
