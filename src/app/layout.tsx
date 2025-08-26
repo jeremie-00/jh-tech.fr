@@ -19,9 +19,9 @@ const SpaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio de Jérémie Hérault | Développeur Web",
+  title: "JH-Tech – Portfolio de Jérémie Hérault | Développeur Web",
   description:
-    "Explorez le portfolio de Jérémie Hérault, développeur web spécialisé en React, Next.js et TailwindCSS. Découvrez des projets modernes, interactifs et performants.",
+    "JH-Tech – Portfolio de Jérémie Hérault, développeur web spécialisé en React, Next.js et TailwindCSS. Découvrez mes projets modernes et performants.",
   keywords: [
     "jh-tech",
     "portfolio",
@@ -41,16 +41,13 @@ export const metadata: Metadata = {
     "Oise",
     "Neuilly-en-Thelle",
   ],
-
   authors: [{ name: "Jérémie Hérault" }],
   robots: "index, follow",
-
   icons: {
     icon: "/icon-jh/favicon.ico",
     apple: "/icon-jh/apple-touch-icon.png",
     shortcut: "/icon-jh/favicon-32x32.png",
   },
-
   manifest: "/site.webmanifest",
   other: {
     "Content-Language": "fr-FR",
@@ -60,7 +57,8 @@ export const metadata: Metadata = {
     ICBM: "49.2273, 2.2486",
   },
   openGraph: {
-    title: "Portfolio de Jérémie Hérault | Développeur Web Full-Stack",
+    title:
+      "JH-Tech – Portfolio de Jérémie Hérault | Développeur Web Full-Stack",
     description:
       "Découvrez les réalisations de Jérémie Hérault, développeur web passionné.",
     url: "https://jh-tech.fr/",
@@ -80,9 +78,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="fr">
       <head>
@@ -93,10 +91,40 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#0A0A0A" />
+
+        {/* JSON-LD Schema.org pour JH-Tech */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Jérémie Hérault",
+              url: "https://jh-tech.fr",
+              sameAs: [
+                "https://www.linkedin.com/in/jeremie-herault/",
+                "https://github.com/jh-tech",
+              ],
+              jobTitle: "Développeur Web",
+              worksFor: {
+                "@type": "Organization",
+                name: "JH-Tech",
+              },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Neuilly-en-Thelle",
+                addressCountry: "FR",
+              },
+            }),
+          }}
+        />
       </head>
       <body
         className={`${DMSans.variable} ${SpaceGrotesk.variable} antialiased`}
       >
+        <h1 className="sr-only">
+          JH-Tech – Portfolio de Jérémie Hérault, Développeur Web
+        </h1>
         {children}
         <ToastNotification />
         <SpeedInsights />
