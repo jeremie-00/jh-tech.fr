@@ -2,7 +2,6 @@ User-agent: *
 
 Disallow: /pages/legal
 Disallow: /CV-Jérémie-Hérault.pdf
-Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 Disallow: /private/
